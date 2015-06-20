@@ -1,0 +1,32 @@
+<ion-view view-title="Poker">
+    <ion-content>
+        <ul class="cards">
+            <li ng-show="vm.selected && !vm.revealed" class="card card-back" ng-click="vm.reveal()">
+                <div class="content">
+                    <h1>PLANNING</h1>
+                    <h2><sup>SCRUM</sup>POKER</h2>
+                </div>
+            </li>
+
+            <li ng-show="vm.revealed" class="card card-front" ng-click="vm.reset()">
+                <div ng-bind-html="vm.selected" class="mark"></div>
+
+                <div class="content">
+                    <span ng-bind-html="vm.selected"></span>
+                </div>
+
+                <div ng-bind-html="vm.selected" class="mark upside-down"></div>
+            </li>
+
+            <li ng-show="!vm.selected" class="card" ng-click="vm.selectCard(card)" ng-repeat="card in vm.cards">
+                <div ng-bind-html="card" class="mark"></div>
+
+                <div class="content">
+                    <span ng-bind-html="card"></span>
+                </div>
+
+                <div ng-bind-html="card" class="mark upside-down"></div>
+            </li>
+        </ul>
+    </ion-content>
+</ion-view>
