@@ -3,7 +3,8 @@
 
     angular
         .module('app')
-        .run(appRun);
+        .run(appRun)
+        .config(config);
 
     appRun.$inject = ['$ionicPlatform'];
 
@@ -16,6 +17,12 @@
                 StatusBar.styleDefault();
             }
         });
+    }
+
+    config.$inject = ['$urlRouterProvider', '$locationProvider'];
+
+    function config($urlRouterProvider) {
+        $urlRouterProvider.otherwise('/poker');
     }
 
 })();

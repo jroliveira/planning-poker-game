@@ -97,3 +97,15 @@
         -webkit-transform: rotate(58deg) translate(0px, 0px);
         transform: rotate(58deg) translate(0px, 0px);
     }
+
+
+.card-revealed {
+    float: right;
+    clear: both;
+    z-index: 1;
+    height: 60px !important;
+}
+
+    .card-revealed .content {
+        top: 60%;
+    }

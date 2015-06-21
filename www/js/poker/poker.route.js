@@ -5,16 +5,14 @@
         .module('app.poker')
         .config(config);
 
-    config.$inject = ['$stateProvider', '$urlRouterProvider'];
+    config.$inject = ['$stateProvider'];
 
-    function config($stateProvider, $urlRouterProvider) {
+    function config($stateProvider) {
         $stateProvider
             .state('poker', {
                 url: '/poker',
                 templateUrl: 'js/poker/poker.html',
                 controller: 'PokerController as vm'
             });
-
-        $urlRouterProvider.otherwise('/poker');
     }
 })();

@@ -1,5 +1,15 @@
 <ion-view view-title="Poker">
     <ion-content>
+        <ul class="cards-revelead">
+            <li ng-class="card.border" ng-show="vm.selected" class="card card-revealed" ng-repeat="card in vm.cardsRevealed">
+                <div ng-bind-html="card.card" class="mark"></div>
+
+                <div class="content">
+                    <span ng-bind-html="card.user"></span>
+                </div>
+            </li>
+        </ul>
+
         <ul class="cards">
             <li ng-show="vm.selected && !vm.revealed" class="card card-back" ng-click="vm.reveal()">
                 <div class="content">
@@ -17,7 +27,7 @@
 
                 <div ng-bind-html="vm.selected" class="mark upside-down"></div>
             </li>
-
+            
             <li ng-show="!vm.selected" class="card" ng-click="vm.selectCard(card)" ng-repeat="card in vm.cards">
                 <div ng-bind-html="card" class="mark"></div>
 
@@ -29,4 +39,11 @@
             </li>
         </ul>
     </ion-content>
+    <ion-footer-bar class="bar-dark">
+        <div class="buttons buttons-right">
+            <button class="button button-energized-900 button-fab" ng-click="vm.login()">
+                <i class="icon ion-cloud light"></i>
+            </button>
+        </div>
+    </ion-footer-bar>
 </ion-view>
