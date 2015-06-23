@@ -5,13 +5,12 @@
         .module('app.poker')
         .controller('PokerController', PokerController);
 
-    PokerController.$inject = ['$location'];
+    PokerController.$inject = ['socket', '$location'];
 
-    function PokerController($location) {
+    function PokerController(socket, $location) {
         var vm = this;
         vm.cards = ['0', '&frac12;', '1', '2', '3', '5', '8', '13', '20', '40', '100', '&infin;', '?', '[_]D'];
         vm.cardsRevealed = [];
-
         vm.selectCard = selectCard;
         vm.reveal = reveal;
         vm.reset = reset;
@@ -19,30 +18,28 @@
 
         reset();
 
-        function reveal() {
-            vm.revealed = true;
-        }
-
-        function selectCard(card) {
-            vm.selected = card;
-        }
+        socket.on('card revealed', onRevealed);
 
         function reset() {
             vm.revealed = false;
             vm.selected = null;
         }
 
+        function selectCard(card) {
+            vm.selected = card;
+        }
+
+        function reveal(card) {
+            vm.revealed = true;
+            socket.emit('card revealed', card);
+        }
+
         function login() {
-            //$location.url('/login');
+            $location.url('/login');
+        }
 
-            var cardNumber = Math.floor((Math.random() * 10) + 1);
-
-            var card = {
-                user: 'jr',
-                card: cardNumber,
-                border: cardNumber == vm.selected ? 'border-green' : 'border-red'
-            };
-
+        function onRevealed(card) {
+            card.border = card.card == vm.selected ? 'border-green' : 'border-red';
             vm.cardsRevealed.push(card);
         }
     }

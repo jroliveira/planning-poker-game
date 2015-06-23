@@ -5,52 +5,30 @@
         .module('app.login')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$ionicPopup', '$scope', '$location'];
+    LoginController.$inject = ['socket', '$ionicPopup', '$location'];
 
-    function LoginController($ionicPopup, $scope, $location) {
+    function LoginController(socket, $ionicPopup, $location) {
         var vm = this;
-        vm.onInit = onInit;
+        vm.channel = {
+            user: '',
+            channel: ''
+        };
+        vm.send = send;
+        vm.back = back;
 
-        function onInit() {
-            $scope.data = {};
+        function send() {
+            socket.emit('join channel', vm.channel);
 
-            var popup = $ionicPopup.show({
-                templateUrl: 'js/login/form.html',
-                title: 'Enter data',
-                scope: $scope,
-                buttons: [{
-                    text: 'Cancel',
-                    type: 'button-assertive',
-                    onTap: backPoker
-                }, {
-                    text: '<b>Send</b>',
-                    type: 'button-balanced',
-                    onTap: onSend
-                }]
+            var alertPopup = $ionicPopup.alert({
+                title: 'Information',
+                template: 'Logged in successfully'
             });
 
-            popup.then(validate);
+            alertPopup.then(back);
+        }
 
-            function validate(res) {
-                if (res) {
-                    var alertPopup = $ionicPopup.alert({
-                        title: 'Information',
-                        template: 'Logged in successfully'
-                    });
-
-                    alertPopup.then(backPoker);
-                } else {
-                    backPoker();
-                }
-            }
-
-            function onSend() {
-                return $scope.data;
-            }
-
-            function backPoker() {
-                $location.url('/poker');
-            }
+        function back() {
+            $location.url('/poker');
         }
     }
 })();

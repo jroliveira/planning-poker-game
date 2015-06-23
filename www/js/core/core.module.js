@@ -2,8 +2,7 @@
     'use strict';
 
     angular
-        .module('app.poker', [
-            'app.core'
+        .module('app.core', [
+            'btford.socket-io'
         ]);
-
 })();

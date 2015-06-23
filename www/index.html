@@ -10,13 +10,23 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/card.css">
     <link rel="stylesheet" type="text/css" href="css/card-mobile.css">
-
+    
+    <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
+    
+    <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
-
+    
+    <script src="lib/angular-socket-io/socket.js"></script>
+    <script src="https://scrum-poker-api.herokuapp.com/socket.io/socket.io.js"></script>
+    
+    
+    <!-- app's js -->
     <script type="text/javascript" src="js/app.module.js"></script>
     <script type="text/javascript" src="js/app.run.js"></script>
+    <script type="text/javascript" src="js/core/core.module.js"></script>
+    <script type="text/javascript" src="js/core/socket.js"></script>
     <script type="text/javascript" src="js/poker/poker.module.js"></script>
     <script type="text/javascript" src="js/poker/poker.route.js"></script>
     <script type="text/javascript" src="js/poker/poker.controller.js"></script>
@@ -27,9 +37,6 @@
 </head>
 <body ng-app="app">
     <ion-pane>
-        <ion-header-bar align-title="center" class="bar-dark">
-            <h1 class="title">Scrum Poker</h1>
-        </ion-header-bar>
         <ion-nav-view>
             
         </ion-nav-view>
