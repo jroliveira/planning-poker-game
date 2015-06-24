@@ -17,7 +17,7 @@
         vm.back = back;
 
         function send() {
-            socket.emit('join channel', vm.channel);
+            socket.emit('join', vm.channel);
 
             var alertPopup = $ionicPopup.alert({
                 title: 'Information',

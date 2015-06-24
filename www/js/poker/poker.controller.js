@@ -10,7 +10,7 @@
     function PokerController(socket, $location) {
         var vm = this;
         vm.cards = ['0', '&frac12;', '1', '2', '3', '5', '8', '13', '20', '40', '100', '&infin;', '?', '[_]D'];
-        vm.cardsRevealed = [];
+        vm.users = {};
         vm.selectCard = selectCard;
         vm.reveal = reveal;
         vm.reset = reset;
@@ -18,11 +18,17 @@
 
         reset();
 
-        socket.on('card revealed', onRevealed);
+        socket.on('card revealed', onCardRevealed);
+        socket.on('user joined', onUserJoined);
 
         function reset() {
             vm.revealed = false;
             vm.selected = null;
+
+            angular.forEach(vm.users, function (user) {
+                user.card = null;
+                user.border = null;
+            });
         }
 
         function selectCard(card) {
@@ -31,16 +37,24 @@
 
         function reveal(card) {
             vm.revealed = true;
-            socket.emit('card revealed', card);
+            socket.emit('card reveal', card);
         }
 
         function login() {
             $location.url('/login');
         }
 
-        function onRevealed(card) {
-            card.border = card.card == vm.selected ? 'border-green' : 'border-red';
-            vm.cardsRevealed.push(card);
+        function onCardRevealed(card) {
+            vm.users[card.userId].card = card.points;
+            vm.users[card.userId].border = card.points == vm.selected ? 'border-green' : 'border-red';
+        }
+
+        function onUserJoined(user) {
+            vm.users[user.id] = {
+                user: user.user,
+                card: null,
+                border: null
+            };
         }
     }
 })();

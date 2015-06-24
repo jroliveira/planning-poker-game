@@ -9,6 +9,7 @@
 
     function socket(socketFactory) {
         var server = io.connect('https://scrum-poker-api.herokuapp.com');
+        //var server = io.connect('http://localhost:8081');
 
         var services = socketFactory({
             ioSocket: server
