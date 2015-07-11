@@ -1,4 +1,4 @@
-﻿.card {
+.card {
     margin: 5px 3% 5px 3%;
     display: inline-block;
     cursor: pointer;
@@ -39,12 +39,12 @@
             .card .content span,
             .card .content h1,
             .card .content h2 > sup {
-                color: #ffffff;
+                color: #0C0B13;
             }
 
         .card .mark,
         .card .content .h2 {
-            color: #0C0B13;
+            color: #ffffff;
         }
 
     .card .mark {

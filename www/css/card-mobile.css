@@ -1,4 +1,4 @@
-﻿@media screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
     .card {
         height: 90px;
         width: 19%;
@@ -7,7 +7,7 @@
         -webkit-border-radius: 6px;
         border-radius: 6px;
     }
-
+  
         .card .content span {
             font-size: 28pt;
         }
@@ -57,7 +57,7 @@
             }
 
         .card-front .content span {
-            font-size: 122px;
+            font-size: 170px;
         }
 
         .card-front .mark {
