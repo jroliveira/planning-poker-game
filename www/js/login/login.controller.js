@@ -14,7 +14,7 @@
             channel: ''
         };
         vm.send = send;
-        vm.back = back;
+        vm.cancel = cancel;
 
         function send() {
             socket.emit('join', vm.channel);
@@ -24,11 +24,15 @@
                 template: 'Logged in successfully'
             });
 
-            alertPopup.then(back);
+            alertPopup.then(join);
         }
 
-        function back() {
-            $location.url('/poker');
+        function join() {
+            $location.url('/poker/true');
+        }
+
+        function cancel() {
+            $location.url('/poker/false');
         }
     }
 })();

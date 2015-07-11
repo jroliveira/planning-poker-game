@@ -5,12 +5,13 @@
         .module('app.poker')
         .controller('PokerController', PokerController);
 
-    PokerController.$inject = ['socket', '$location'];
+    PokerController.$inject = ['socket', '$location', '$stateParams'];
 
-    function PokerController(socket, $location) {
+    function PokerController(socket, $location, $stateParams) {
         var vm = this;
         vm.cards = ['0', '&frac12;', '1', '2', '3', '5', '8', '13', '20', '40', '100', '&infin;', '?', '[_]D'];
         vm.users = {};
+        vm.userJoined = $stateParams.joined === 'true';
         vm.selectCard = selectCard;
         vm.reveal = reveal;
         vm.reset = reset;
@@ -50,6 +51,8 @@
         }
 
         function onUserJoined(user) {
+            vm.userJoined = true;
+
             vm.users[user.id] = {
                 user: user.user,
                 card: null,

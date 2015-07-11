@@ -22,7 +22,7 @@
     config.$inject = ['$urlRouterProvider', '$locationProvider'];
 
     function config($urlRouterProvider) {
-        $urlRouterProvider.otherwise('/poker');
+        $urlRouterProvider.otherwise('/poker/false');
     }
 
 })();
