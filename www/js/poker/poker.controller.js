@@ -11,7 +11,7 @@
         var vm = this;
         vm.cards = ['0', '&frac12;', '1', '2', '3', '5', '8', '13', '20', '40', '100', '&infin;', '?', '[_]D'];
         vm.users = {};
-        vm.userJoined = false;
+        vm.joined = false;
         vm.selectCard = selectCard;
         vm.reveal = reveal;
         vm.reset = reset;
@@ -19,9 +19,9 @@
 
         reset();
 
-        socket.on('card revealed', onCardRevealed);
-        socket.on('user joined', onUserJoined);
         socket.on('joined', onJoined);
+        socket.on('user joined', onUserJoined);
+        socket.on('card revealed', onCardRevealed);
 
         function reset() {
             vm.revealed = false;
@@ -45,27 +45,27 @@
             $location.url('/login');
         }
 
-        function onCardRevealed(card) {
-            vm.users[card.userId].card = card.points;
-        }
-
-        function onUserJoined(user) {
-            addUser(user.id, user.name);
-        }
-
         function onJoined(users) {
-            vm.userJoined = true;
+            vm.joined = true;
 
-            angular.forEach(users, function (name, id) {
-                addUser(id, name);
+            angular.forEach(users, function (user) {
+                addUser(user);
             });
         }
 
-        function addUser(id, name) {
-            vm.users[id] = {
-                user: name,
+        function onUserJoined(user) {
+            addUser(user);
+        }
+
+        function addUser(user) {
+            vm.users[user.id] = {
+                user: user.name,
                 card: null,
             };
+        }
+
+        function onCardRevealed(card) {
+            vm.users[card.userId].card = card.points;
         }
     }
 })();

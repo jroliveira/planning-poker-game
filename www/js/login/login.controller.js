@@ -11,7 +11,7 @@
         var vm = this;
         vm.user = {
             name: '',
-            channel: ''
+            room: ''
         };
         vm.send = send;
         vm.cancel = cancel;
