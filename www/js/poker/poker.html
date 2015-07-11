@@ -4,7 +4,7 @@
     </ion-header-bar>
     <ion-content>
         <ul class="cards-revelead">
-            <li ng-class="user.border" ng-show="vm.selected" class="card card-revealed" ng-repeat="user in vm.users">
+            <li ng-class="user.card == vm.selected ? 'border-green' : 'border-red'" ng-show="vm.selected" class="card card-revealed" ng-repeat="user in vm.users">
                 <div ng-bind-html="user.card" class="mark"></div>
 
                 <div class="content">

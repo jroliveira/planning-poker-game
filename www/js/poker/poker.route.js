@@ -10,7 +10,7 @@
     function config($stateProvider) {
         $stateProvider
             .state('poker', {
-                url: '/poker/:joined',
+                url: '/poker',
                 templateUrl: 'js/poker/poker.html',
                 controller: 'PokerController as vm'
             });

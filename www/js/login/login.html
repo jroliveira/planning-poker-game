@@ -11,15 +11,15 @@
         <div class="list im-wrapper">
             <label class="item item-input item-floating-label">
                 <span class="input-label">Channel</span>
-                <input ng-model="vm.channel.channel" type="text" placeholder="Channel">
+                <input ng-model="vm.user.channel" type="text" placeholder="Channel">
             </label>
 
             <label class="item item-input item-floating-label">
                 <span class="input-label">User</span>
-                <input ng-model="vm.channel.user" type="text" placeholder="User">
+                <input ng-model="vm.user.name" type="text" placeholder="User">
             </label>
             
-            <button class="button button-block button-positive" ng-click="vm.send()">
+            <button class="button button-block button-positive" ng-click="vm.send(vm.user)">
                 Send
             </button>
         </div>

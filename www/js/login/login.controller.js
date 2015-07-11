@@ -9,15 +9,15 @@
 
     function LoginController(socket, $ionicPopup, $location) {
         var vm = this;
-        vm.channel = {
-            user: '',
+        vm.user = {
+            name: '',
             channel: ''
         };
         vm.send = send;
         vm.cancel = cancel;
 
-        function send() {
-            socket.emit('join', vm.channel);
+        function send(user) {
+            socket.emit('join', user);
 
             var alertPopup = $ionicPopup.alert({
                 title: 'Information',
@@ -28,11 +28,11 @@
         }
 
         function join() {
-            $location.url('/poker/true');
+            $location.url('/poker');
         }
 
         function cancel() {
-            $location.url('/poker/false');
+            $location.url('/poker');
         }
     }
 })();
