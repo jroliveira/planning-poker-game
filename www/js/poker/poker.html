@@ -12,6 +12,14 @@
                 </div>
             </li>
         </ul>
+        
+        <ul class="users">
+            <li ng-show="!vm.selected" class="user" ng-repeat="user in vm.users">
+                <div class="content">
+                    <span ng-bind-html="user.user | limitTo:2"></span>
+                </div>
+            </li>
+        </ul>
 
         <ul class="cards">
             <li ng-show="vm.selected && !vm.revealed" class="card card-back" ng-click="vm.reveal(vm.selected)">

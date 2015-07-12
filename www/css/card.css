@@ -1,3 +1,15 @@
+.cards,
+.cards-revelead {
+    list-style: none;
+    width: 100%;
+}
+
+.cards-revelead {
+    position: absolute;
+    bottom: -60px;
+    max-height: 500px;
+}
+
 .card {
     margin: 5px 3% 5px 3%;
     display: inline-block;
@@ -108,4 +120,12 @@
 
     .card-revealed .content {
         top: 60%;
+    }
+
+    .card-revealed.border-red {
+        border-color: #ef473a !important;
+    }
+
+    .card-revealed.border-green {
+        border-color: #33cd5f !important;
     }

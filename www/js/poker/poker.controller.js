@@ -21,6 +21,7 @@
 
         socket.on('joined', onJoined);
         socket.on('user joined', onUserJoined);
+        socket.on('user left', onUserLeft);
         socket.on('card revealed', onCardRevealed);
 
         function reset() {
@@ -62,6 +63,10 @@
                 user: user.name,
                 card: null,
             };
+        }
+
+        function onUserLeft(user) {
+            delete vm.users[user.id];
         }
 
         function onCardRevealed(card) {
