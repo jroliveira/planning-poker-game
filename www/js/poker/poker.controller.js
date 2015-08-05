@@ -49,6 +49,8 @@
         function onJoined(users) {
             vm.joined = true;
 
+            vm.users = {};
+
             angular.forEach(users, function (user) {
                 addUser(user);
             });
