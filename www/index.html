@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Scrum Poker</title>
 
-    <link rel="stylesheet" type="text/css" href="lib/ionic/css/ionic.css">
-    <link rel="stylesheet" type="text/css" href="lib/ionic-material/dist/ionic.material.min.css">
-    
-    <!-- app's css -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/card.css">
-    <link rel="stylesheet" type="text/css" href="css/card-mobile.css">
-    <link rel="stylesheet" type="text/css" href="css/user.css">
-    
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
-    
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-    
-    <script src="lib/angular-socket-io/socket.js"></script>
-    <script src="https://scrum-poker-api.herokuapp.com/socket.io/socket.io.js"></script>
-    <!--<script src="http://localhost:8081/socket.io/socket.io.js"></script>-->
-    
-    
-    <!-- app's js -->
-    <script type="text/javascript" src="js/app.module.js"></script>
-    <script type="text/javascript" src="js/app.run.js"></script>
-    <script type="text/javascript" src="js/core/core.module.js"></script>
-    <script type="text/javascript" src="js/core/socket.js"></script>
-    <script type="text/javascript" src="js/poker/poker.module.js"></script>
-    <script type="text/javascript" src="js/poker/poker.route.js"></script>
-    <script type="text/javascript" src="js/poker/poker.controller.js"></script>
-    <script type="text/javascript" src="js/poker/card.directive.js"></script>
-    <script type="text/javascript" src="js/login/login.module.js"></script>
-    <script type="text/javascript" src="js/login/login.route.js"></script>
-    <script type="text/javascript" src="js/login/login.controller.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>Scrum Poker</title>
+
+  <link rel="stylesheet" type="text/css" href="lib/ionic/css/ionic.css">
+  <link rel="stylesheet" type="text/css" href="lib/ionic-material/dist/ionic.material.min.css">
+
+  <!-- app's css -->
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link rel="stylesheet" type="text/css" href="styles/card.css">
+  <link rel="stylesheet" type="text/css" href="styles/user.css">
 </head>
+
 <body ng-app="app">
-    <ion-pane>
-        <ion-nav-view>
-            
-        </ion-nav-view>
-    </ion-pane>
+  <ion-pane>
+    <ion-nav-view>
+    </ion-nav-view>
+  </ion-pane>
+
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <script src="lib/angular-socket-io/socket.js"></script>
+  <script src="https://scrum-poker-api.herokuapp.com/socket.io/socket.io.js"></script>
+
+  <!-- app's js -->
+  <script type="text/javascript" src="app/app.module.js"></script>
+  <script type="text/javascript" src="app/route.js"></script>
+
+  <script type="text/javascript" src="app/blocks/exception/exception.module.js"></script>
+  <script type="text/javascript" src="app/blocks/exception/exception-handler.config.js"></script>
+  <script type="text/javascript" src="app/blocks/exception/exception-handler.provider.js"></script>
+  <script type="text/javascript" src="app/blocks/exception/exception.js"></script>
+
+  <script type="text/javascript" src="app/blocks/logger/logger.module.js"></script>
+  <script type="text/javascript" src="app/blocks/logger/logger.js"></script>
+
+  <script type="text/javascript" src="app/core/core.module.js"></script>
+  <script type="text/javascript" src="app/core/constants.js"></script>
+  <script type="text/javascript" src="app/core/handler-error.js"></script>
+  <script type="text/javascript" src="app/core/cordova.js"></script>
+  <script type="text/javascript" src="app/core/back-button.js"></script>
+  <script type="text/javascript" src="app/core/socket.js"></script>
+
+  <script type="text/javascript" src="app/poker/poker.module.js"></script>
+  <script type="text/javascript" src="app/poker/poker.route.js"></script>
+  <script type="text/javascript" src="app/poker/poker.controller.js"></script>
+  <script type="text/javascript" src="app/poker/card.directive.js"></script>
+
+  <script type="text/javascript" src="app/login/login.module.js"></script>
+  <script type="text/javascript" src="app/login/login.route.js"></script>
+  <script type="text/javascript" src="app/login/login.controller.js"></script>
 </body>
+
 </html>
