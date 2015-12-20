@@ -5,24 +5,34 @@
     .module('app.core')
     .factory('socket', socket);
 
-  socket.$inject = ['socketFactory'];
+  socket.$inject = ['socketFactory', 'logger', 'io'];
 
   /* @ngInject */
-  function socket(socketFactory) {
-    var server = null;
-
+  function socket(socketFactory, logger, io) {
     try {
-      server = io.connect('https://scrum-poker-api.herokuapp.com');
-    } catch (err) {}
+      if (!io || !io.connect) {
+        throw new Error('Can not load socket.io');
+      }
 
-    var options = {
-      ioSocket: server
-    };
+      var server = io.connect('https://scrum-poker-api.herokuapp.com');
 
-    var factory = socketFactory(options);
-    factory.forward('connect');
+      var options = {
+        ioSocket: server
+      };
 
-    return factory;
+      var factory = socketFactory(options);
+      factory.forward('connect');
+
+      return factory;
+    } catch (err) {
+      var data = {
+        exception: err
+      };
+
+      logger.error(err.message, data);
+
+      return null;
+    }
   }
 
 })();

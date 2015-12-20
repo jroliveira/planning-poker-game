@@ -18,7 +18,6 @@
   function extendExceptionHandler($delegate, exceptionHandler, logger) {
     return func;
 
-
     function func(exception, cause) {
       var appErrorPrefix = exceptionHandler.config.appErrorPrefix || '';
       var errorData = {

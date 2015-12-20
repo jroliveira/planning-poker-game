@@ -5,33 +5,20 @@
     .module('blocks.logger')
     .factory('logger', logger);
 
-  logger.$inject = ['$log'];
+  logger.$inject = ['airbrake'];
 
   /* @ngInject */
-  function logger($log) {
+  function logger(airbrake) {
     return {
-      error: error,
-      info: info,
-      success: success,
-      warning: warning,
-
-      log: $log.log
+      error: error
     };
 
     function error(message, data, title) {
-      $log.error('Error: ' + message, data);
-    }
+      var notify = {
+        error: data.exception
+      };
 
-    function info(message, data, title) {
-      $log.info('Info: ' + message, data);
-    }
-
-    function success(message, data, title) {
-      $log.info('Success: ' + message, data);
-    }
-
-    function warning(message, data, title) {
-      $log.warn('Warning: ' + message, data);
+      airbrake.notify(notify);
     }
   }
 

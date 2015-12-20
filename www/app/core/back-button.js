@@ -18,7 +18,7 @@
     function backButton(e) {
       var options = {
         title: 'Confirm Exit',
-        template: "Are you sure you want to exit?"
+        template: 'Are you sure you want to exit?'
       };
 
       var confirmPopup = $ionicPopup.confirm(options);

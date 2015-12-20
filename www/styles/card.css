@@ -6,7 +6,7 @@
 
 .cards-revelead {
   position: absolute;
-  bottom: -60px;
+  bottom: -25px;
   max-height: 500px;
 }
 
@@ -57,14 +57,14 @@
       .card .content span,
       .card .content h1,
       .card .content h2 > sup {
-        font-size: 28pt;
+        font-size: 31pt;
         color: #0C0B13;
       }
 
     .card .mark,
     .card .content .h2 {
-      font-size: 20px;
-      top: 2px;
+      font-size: 12px;
+      top: -2px;
       left: 5px;
       color: #ffffff;
     }
@@ -83,7 +83,7 @@
       top: auto;
       left: auto;
       color: #E1623F;
-      bottom: 2px;
+      bottom: -2px;
       right: 5px;
     }
 
@@ -96,35 +96,36 @@
   vertical-align: middle;
   display: table;
   margin: 0 auto;
-  margin-top: 100px;
-  height: 330px;
-  width: 230px;
+  margin-top: 60px;
+  height: 400px;
+  width: 260px;
   font-size: 72pt;
 }
 
   .card-back .content h1,
   .card-back .content h2 {
-    font-size: 21px;
-    line-height: 25px;
+    font-size: 22pt;
+    line-height: 29px;
   }
 
     .card-back .content h2 > sup {
-      font-size: 14px;
+      font-size: 15pt;
+      top: -0.3em;
     }
 
   .card-front .mark {
-    font-size: 40pt;
-    top: 20px;
+    font-size: 27pt;
+    top: 11px;
     left: 10px;
   }
 
     .card-front .mark.upside-down {
-      bottom: 15px;
+      bottom: 11px;
       right: 10px;
     }
 
   .card-front .content span {
-    font-size: 170px;
+    font-size: 171pt;
   }
 
   .card-back:before {
@@ -136,11 +137,11 @@
     -ms-transform: rotate(72deg) translate(75px, 20px);
     -webkit-transform: rotate(72deg) translate(75px, 20px);
     transform: rotate(72deg) translate(75px, 20px);
-    top: 10px;
+    top: 20px;
     bottom: 0px;
     left: 0px;
     right: -30px;
-    border-left: solid 90px #664C4F;
+    border-left: solid 111px #664C4F;
   }
 
 
@@ -178,4 +179,9 @@
 
   .card-revealed.border-green {
     border-color: #33cd5f !important;
+  }
+
+  .card-revealed .mark {
+    font-size: 17pt;
+    top: 0px;
   }

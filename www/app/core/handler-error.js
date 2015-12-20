@@ -2,8 +2,8 @@
   'use strict';
 
   var config = {
-    appErrorPrefix: '[helloWorld Error] ',
-    appTitle: 'helloWorld'
+    appErrorPrefix: '[Error] ',
+    appTitle: 'scrum-poker'
   };
 
   angular
@@ -19,11 +19,7 @@
       $logProvider.debugEnabled(true);
     }
 
-    var routerConfig = {
-      docTitle: config.appTitle + ': '
-    };
-
-    exceptionHandlerProvider.configure(config.appErrorPrefix);    
+    exceptionHandlerProvider.configure(config.appErrorPrefix);
   }
 
 })();

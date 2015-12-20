@@ -8,7 +8,7 @@
   PokerController.$inject = ['$scope', 'socket', '$location'];
 
   /* @ngInject */
-  function PokerController($scope, socket, $location) {
+  function PokerController($scope, socket, $location, airbrake) {
     var vm = this;
     vm.cards = ['0', '1', '2', '3', '5', '8', '13', '20', '40', '&infin;', '?'];
     vm.users = {};

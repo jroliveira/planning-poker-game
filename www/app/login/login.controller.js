@@ -20,10 +20,12 @@
     function send(user) {
       socket.emit('join', user);
 
-      var alertPopup = $ionicPopup.alert({
+      var options = {
         title: 'Information',
         template: 'Logged in successfully'
-      });
+      };
+
+      var alertPopup = $ionicPopup.alert(options);
 
       alertPopup.then(join);
     }
