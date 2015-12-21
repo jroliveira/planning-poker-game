@@ -5,10 +5,10 @@
     .module('app.poker')
     .controller('PokerController', PokerController);
 
-  PokerController.$inject = ['$scope', 'socket', '$location'];
+  PokerController.$inject = ['$scope', '$location', 'socket'];
 
   /* @ngInject */
-  function PokerController($scope, socket, $location, airbrake) {
+  function PokerController($scope, $location, socket) {
     var vm = this;
     vm.cards = ['0', '1', '2', '3', '5', '8', '13', '20', '40', '&infin;', '?'];
     vm.users = {};

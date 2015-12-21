@@ -3,12 +3,12 @@
 
   angular
     .module('app.core')
-    .run(appRun);
+    .run(cordovaRun);
 
-  appRun.$inject = ['$ionicPlatform', 'cordova', 'StatusBar'];
+  cordovaRun.$inject = ['$ionicPlatform', 'cordova', 'StatusBar', 'insomnia', 'logger'];
 
   /* @ngInject */
-  function appRun($ionicPlatform, cordova, StatusBar) {
+  function cordovaRun($ionicPlatform, cordova, StatusBar, insomnia, logger) {
     $ionicPlatform.ready(onReady);
 
     function onReady() {
@@ -19,6 +19,14 @@
 
       if (StatusBar && StatusBar.styleLightContent) {
         StatusBar.styleDefault();
+      }
+
+      if (!insomnia && !insomnia.keepAwake) {
+        logger.error('Can not load plugin insomnia');
+      } else {
+        insomnia.keepAwake(null, function (err) {
+          logger.error('Insomnia on error: ' + JSON.stringify(err));
+        });
       }
     }
   }

@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-  <widget id="com.ionicframework.scrumpocker559303" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>scrum-pocker</name>
-    <description>
-      An Ionic Framework and Cordova project.
-    </description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
-    </author>
-    <content src="index.html" />
-    <access origin="*" />
-    <allow-navigation href="*" />
-    <preference name="webviewbounce" value="false" />
-    <preference name="UIWebViewBounce" value="false" />
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-minSdkVersion" value="16" />
-    <preference name="BackupWebStorage" value="none" />
-    <feature name="StatusBar">
-      <param name="ios-package" value="CDVStatusBar" onload="true" />
-    </feature>
-  </widget>
+<widget id="com.ionicframework.scrumpocker559303" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Scrum Poker</name>
+  <description>
+    App mobile hibrida de Scrum Poker.
+  </description>
+  <author email="junolive@gmail.com" href="http://jroliveira.net/">
+    Junior Oliveira
+  </author>
+  <content src="index.html" />
+  <access origin="*" />
+  <allow-navigation href="*" />
+  <preference name="webviewbounce" value="false" />
+  <preference name="UIWebViewBounce" value="false" />
+  <preference name="DisallowOverscroll" value="true" />
+  <preference name="android-minSdkVersion" value="16" />
+  <preference name="BackupWebStorage" value="none" />
+  <feature name="StatusBar">
+    <param name="ios-package" value="CDVStatusBar" onload="true" />
+  </feature>
+  <feature name="Insomnia">
+    <param name="android-package" value="nl.xservices.plugins.Insomnia" />
+  </feature>
+</widget>

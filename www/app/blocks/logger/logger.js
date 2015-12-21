@@ -14,6 +14,12 @@
     };
 
     function error(message, data, title) {
+      data = data || {
+        exception: {
+          message: message
+        }
+      };
+
       var notify = {
         error: data.exception
       };
