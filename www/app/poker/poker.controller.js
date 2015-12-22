@@ -38,7 +38,11 @@
     }
 
     function reveal(card) {
-      $scope.$apply(revealedChanged);
+      if ($scope.$$phase) {
+        revealedChanged();
+      } else {
+        $scope.$apply(revealedChanged);
+      }
 
       function revealedChanged() {
         vm.revealed = true;
