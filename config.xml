@@ -15,10 +15,4 @@
   <preference name="DisallowOverscroll" value="true" />
   <preference name="android-minSdkVersion" value="16" />
   <preference name="BackupWebStorage" value="none" />
-  <feature name="StatusBar">
-    <param name="ios-package" value="CDVStatusBar" onload="true" />
-  </feature>
-  <feature name="Insomnia">
-    <param name="android-package" value="nl.xservices.plugins.Insomnia" />
-  </feature>
 </widget>

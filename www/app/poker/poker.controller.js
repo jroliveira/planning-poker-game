@@ -5,10 +5,10 @@
     .module('app.poker')
     .controller('PokerController', PokerController);
 
-  PokerController.$inject = ['$scope', '$location', 'socket'];
+  PokerController.$inject = ['$scope', '$rootScope', '$location', 'socket'];
 
   /* @ngInject */
-  function PokerController($scope, $location, socket) {
+  function PokerController($scope, $rootScope, $location, socket) {
     var vm = this;
     vm.cards = ['0', '1', '2', '3', '5', '8', '13', '20', '40', '&infin;', '?'];
     vm.users = {};
@@ -20,6 +20,7 @@
     vm.login = login;
 
     $scope.$on('socket:connect', onConnected);
+    $rootScope.$on('user:shake', onShake);
 
     reset();
 
@@ -37,7 +38,11 @@
     }
 
     function reveal(card) {
-      vm.revealed = true;
+      $scope.$apply(revealedChanged);
+
+      function revealedChanged() {
+        vm.revealed = true;
+      }
 
       if (vm.connected) {
         socket.emit('card reveal', card);
@@ -46,6 +51,12 @@
 
     function login() {
       $location.url('/login');
+    }
+
+    function onShake() {
+      if (vm.selected && !vm.revealed) {
+        vm.reveal(vm.selected);
+      }
     }
 
     function onConnected() {
