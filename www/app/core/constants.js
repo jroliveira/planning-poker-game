@@ -6,6 +6,6 @@
     .constant('io', typeof io !== 'undefined' ? io : {})
     .constant('cordova', typeof window.cordova !== 'undefined' ? window.cordova : {})
     .constant('shake', typeof window.shake !== 'undefined' ? window.shake : {})
-    .constant('insomnia', typeof window.plugins.insomnia !== 'undefined' ? window.plugins.insomnia : {});
+    .constant('insomnia', (typeof window.plugins !== 'undefined') && (typeof window.plugins.insomnia !== 'undefined') ? window.plugins.insomnia : {});
 
 })();

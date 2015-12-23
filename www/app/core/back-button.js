@@ -5,10 +5,10 @@
     .module('app.core')
     .run(backButtonRun);
 
-  backButtonRun.$inject = ['$ionicPlatform', '$ionicPopup'];
+  backButtonRun.$inject = ['$ionicPlatform', '$ionicPopup', 'shake'];
 
   /* @ngInject */
-  function backButtonRun($ionicPlatform, $ionicPopup) {
+  function backButtonRun($ionicPlatform, $ionicPopup, shake) {
     $ionicPlatform.ready(onReady);
 
     function onReady() {
@@ -30,6 +30,10 @@
 
     function onConfirm(close) {
       if (close) {
+        if (shake && shake.stopWatch) {
+          shake.stopWatch();
+        }
+
         ionic.Platform.exitApp();
       }
     }

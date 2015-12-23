@@ -21,17 +21,13 @@
     </ion-nav-view>
   </ion-pane>
 
-  <!-- Airbrake -->
-  <script src="lib/airbrake-js/dist/client.js"></script>
-  
-  <!-- ionic/angularjs js -->
   <script src="lib/ionic/js/ionic.bundle.js"></script>
   <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
+  <script src="lib/airbrake-js/dist/client.js"></script>
+  <script src="lib/angular-socket-io/socket.js"></script>
 
-  <!-- cordova script (this will be a 404 during development) -->
   <script src="cordova.js"></script>
 
-  <script src="lib/angular-socket-io/socket.js"></script>
   <script src="https://scrum-poker-api.herokuapp.com/socket.io/socket.io.js"></script>
 
   <!-- app's js -->
@@ -50,9 +46,12 @@
   <script type="text/javascript" src="app/core/core.module.js"></script>
   <script type="text/javascript" src="app/core/constants.js"></script>
   <script type="text/javascript" src="app/core/handler-error.js"></script>
-  <script type="text/javascript" src="app/core/cordova.js"></script>
   <script type="text/javascript" src="app/core/back-button.js"></script>
   <script type="text/javascript" src="app/core/socket.js"></script>
+
+  <script type="text/javascript" src="app/core/plugins/cordova.js"></script>
+  <script type="text/javascript" src="app/core/plugins/shake.js"></script>
+  <script type="text/javascript" src="app/core/plugins/insomnia.js"></script>
 
   <script type="text/javascript" src="app/poker/poker.module.js"></script>
   <script type="text/javascript" src="app/poker/poker.route.js"></script>
