@@ -26,3 +26,8 @@ body {
 .has-header {
   top: 50px;
 }
+
+.menu-open .bar.bar-header.expanded {
+  background-color: #222;
+  background-size: 0px
+}

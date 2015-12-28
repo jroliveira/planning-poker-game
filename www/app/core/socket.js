@@ -9,30 +9,21 @@
 
   /* @ngInject */
   function socket(socketFactory, logger, io) {
-    try {
-      if (!io || !io.connect) {
-        throw new Error('Can not load socket.io');
-      }
-
-      var server = io.connect('https://scrum-poker-api.herokuapp.com');
-
-      var options = {
-        ioSocket: server
-      };
-
-      var factory = socketFactory(options);
-      factory.forward('connect');
-
-      return factory;
-    } catch (err) {
-      var data = {
-        exception: err
-      };
-
-      logger.error(err.message, data);
-
+    if (!io || !io.connect) {
+      logger.error('Can not load socket.io');
       return null;
     }
+
+    var server = io.connect('https://scrum-poker-api.herokuapp.com');
+
+    var options = {
+      ioSocket: server
+    };
+
+    var factory = socketFactory(options);
+    factory.forward('connect');
+
+    return factory;
   }
 
 })();

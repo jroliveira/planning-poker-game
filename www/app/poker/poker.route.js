@@ -10,10 +10,14 @@
   /* @ngInject */
   function config($stateProvider) {
     $stateProvider
-      .state('poker', {
+      .state('game.poker', {
         url: '/poker',
-        templateUrl: 'app/poker/poker.html',
-        controller: 'PokerController as vm'
+        views: {
+          'menuContent': {
+            templateUrl: 'app/poker/poker.html',
+            controller: 'PokerController as vm'
+          }
+        }
       });
   }
 })();

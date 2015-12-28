@@ -7,8 +7,11 @@
       'ionic-material',
       'btford.socket-io',
       'app.core',
+      'app.main',
       'app.poker',
-      'app.login'
+      'app.card',
+      'app.login',
+      'app.about'
     ]);
 
 })();

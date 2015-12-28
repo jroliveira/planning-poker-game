@@ -1,0 +1,32 @@
+<ion-view view-title="Card">
+  <ion-content>
+    <ul class="cards-revelead">
+      <li ng-class="user.card == vm.selected ? 'border-green' : 'border-red'" ng-show="vm.selected" class="card card-revealed" ng-repeat="user in vm.users.get()">
+        <div ng-bind-html="user.card" class="mark"></div>
+
+        <div class="content">
+          <span ng-bind-html="user.name | limitTo:2"></span>
+        </div>
+      </li>
+    </ul>
+
+    <ul class="cards">
+      <li ng-show="vm.selected && !vm.revealed" class="card card-back" ng-click="vm.reveal(vm.selected)">
+        <div class="content">
+          <h1>PLANNING</h1>
+          <h2><sup>SCRUM</sup>POKER</h2>
+        </div>
+      </li>
+
+      <li ng-show="vm.revealed" class="card card-front" ng-click="vm.back()">
+        <div ng-bind-html="vm.selected" class="mark"></div>
+
+        <div class="content">
+          <span ng-bind-html="vm.selected"></span>
+        </div>
+
+        <div ng-bind-html="vm.selected" class="mark upside-down"></div>
+      </li>
+    </ul>
+  </ion-content>
+</ion-view>

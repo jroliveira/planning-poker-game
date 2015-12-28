@@ -9,7 +9,7 @@
 
   /* @ngInject */
   function config($urlRouterProvider) {
-    $urlRouterProvider.otherwise('/poker');
+    $urlRouterProvider.otherwise('/game/poker');
   }
 
 })();

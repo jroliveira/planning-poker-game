@@ -15,7 +15,6 @@
       room: ''
     };
     vm.send = send;
-    vm.cancel = cancel;
 
     function send(user) {
       socket.emit('join', user);
@@ -31,10 +30,6 @@
     }
 
     function join() {
-      $location.url('/poker');
-    }
-
-    function cancel() {
       $location.url('/poker');
     }
   }

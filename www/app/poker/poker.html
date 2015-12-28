@@ -1,45 +1,17 @@
-<ion-view view-title="Poker">
-  <ion-header-bar align-title="center" class="bar-dark">
-    <h1 class="title">Scrum Poker</h1>
+<ion-view view-title="Scrum Poker">
+  <ion-header-bar class="bar-dark">
   </ion-header-bar>
   <ion-content>
-    <ul class="cards-revelead">
-      <li ng-class="user.card == vm.selected ? 'border-green' : 'border-red'" ng-show="vm.selected" class="card card-revealed" ng-repeat="user in vm.users">
-        <div ng-bind-html="user.card" class="mark"></div>
-
-        <div class="content">
-          <span ng-bind-html="user.user | limitTo:2"></span>
-        </div>
-      </li>
-    </ul>
-
     <ul class="users">
-      <li ng-show="!vm.selected" class="user" ng-repeat="user in vm.users">
+      <li class="user" ng-repeat="user in vm.users.get()">
         <div class="content">
-          <span ng-bind-html="user.user | limitTo:2"></span>
+          <span ng-bind-html="user.name | limitTo:2"></span>
         </div>
       </li>
     </ul>
 
     <ul class="cards">
-      <li ng-show="vm.selected && !vm.revealed" class="card card-back" ng-click="vm.reveal(vm.selected)">
-        <div class="content">
-          <h1>PLANNING</h1>
-          <h2><sup>SCRUM</sup>POKER</h2>
-        </div>
-      </li>
-
-      <li ng-show="vm.revealed" class="card card-front" ng-click="vm.reset()">
-        <div ng-bind-html="vm.selected" class="mark"></div>
-
-        <div class="content">
-          <span ng-bind-html="vm.selected"></span>
-        </div>
-
-        <div ng-bind-html="vm.selected" class="mark upside-down"></div>
-      </li>
-
-      <li ng-show="!vm.selected" class="card" ng-click="vm.selectCard(card)" ng-repeat="card in vm.cards">
+      <li ng-show="!vm.selected" class="card" ui-sref="card({ card: card })" ng-repeat="card in vm.cards">
         <div ng-bind-html="card" class="mark"></div>
 
         <div class="content">
@@ -50,11 +22,7 @@
       </li>
     </ul>
   </ion-content>
-  <ion-footer-bar class="bar-dark">
-    <div ng-show="vm.connected" class="buttons buttons-right">
-      <button ng-class="vm.joined ? 'button-balanced' : 'button-energized-900'" class="button button-fab" ng-click="vm.login()">
-        <i class="icon ion-cloud light"></i>
-      </button>
-    </div>
-  </ion-footer-bar>
+  <button ng-show="vm.connected" ng-class="vm.joined ? 'button-balanced' : 'button-energized-900'" class="button button-fab button-fab-bottom-right" ui-sref="login">
+    <i class="icon ion-cloud light"></i>
+  </button>
 </ion-view>
