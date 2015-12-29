@@ -11,6 +11,7 @@
   function config($stateProvider) {
     $stateProvider
       .state('login', {
+        cache: false,
         url: '/login',
         templateUrl: 'app/login/login.html',
         controller: 'LoginController as vm'

@@ -11,6 +11,7 @@
   function config($stateProvider) {
     $stateProvider
       .state('game.poker', {
+        cache: true,
         url: '/poker',
         views: {
           'menuContent': {

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app.poker')
+    .module('app.core')
     .directive('card', card);
 
   function card() {

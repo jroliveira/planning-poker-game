@@ -16,7 +16,6 @@
       update: update,
       remove: remove,
       reset: reset,
-      cleanCards: cleanCards,
       get: get,
       any: any
     };
@@ -39,12 +38,6 @@
 
     function reset() {
       _users = {};
-    }
-
-    function cleanCards() {
-      angular.forEach(_users, function (user) {
-        user.card = null;
-      });
     }
 
     function any() {
