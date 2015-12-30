@@ -19,6 +19,10 @@
                         {
                             "xml": "<feature name=\"Insomnia\"><param name=\"android-package\" value=\"nl.xservices.plugins.Insomnia\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Vibration\"><param name=\"android-package\" value=\"org.apache.cordova.vibration.Vibration\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -33,6 +37,9 @@
             "PACKAGE_NAME": "com.ionicframework.scrumpocker559303"
         },
         "nl.x-services.plugins.insomnia": {
+            "PACKAGE_NAME": "com.ionicframework.scrumpocker559303"
+        },
+        "cordova-plugin-vibration": {
             "PACKAGE_NAME": "com.ionicframework.scrumpocker559303"
         }
     },
