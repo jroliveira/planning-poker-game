@@ -1,5 +1,5 @@
 <ion-view view-title="Card">
-  <ion-content>
+  <ion-content class="poker">
     <ul class="cards-revelead">
       <li ng-class="user.card == vm.selected ? 'border-green' : 'border-red'" ng-show="vm.selected" class="card card-revealed" ng-repeat="user in vm.users.get()">
         <div ng-bind-html="user.card" class="mark"></div>

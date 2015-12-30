@@ -1,4 +1,4 @@
-.users {
+.poker .users {
   list-style: none;
   position: absolute;
   bottom: -160px;
@@ -6,7 +6,7 @@
   width: 100%;
 }
 
-.user {
+.poker .user {
   overflow: hidden;
   float: right;
   display: inline-block;
@@ -33,7 +33,7 @@
   border-radius: 6px;
 }
 
-  .user .mark {
+  .poker .user .mark {
     font-family: 'Josefin-Sans';
     position: absolute;
     font-weight: bold;
@@ -43,7 +43,7 @@
     left: 5px;
   }
 
-  .user .content {
+  .poker .user .content {
     top: 60%;
     z-index: 10;
     position: absolute;
@@ -57,7 +57,7 @@
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   }
 
-    .user .content span {
+    .poker .user .content span {
       color: #0C0B13;
       font-family: 'Josefin-Sans';
       margin: 0;

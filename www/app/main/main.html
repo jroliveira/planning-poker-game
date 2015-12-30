@@ -2,7 +2,7 @@
   <ion-side-menu-content>
     <ion-nav-bar class="bar-dark">
       <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon-round" menu-toggle="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
@@ -17,11 +17,14 @@
       </div>
     </ion-header-bar>
     <ion-content class="stable-bg has-expanded-header">
-      <ion-list>
-        <ion-item nav-clear menu-close ui-sref="about">
-          About
-        </ion-item>
-      </ion-list>
+      <div class="list">
+        <a class="item item-icon-left" menu-close ui-sref="about">
+          <i class="icon ion-information-circled"></i> About
+          <span class="item-note">
+            v1.0
+          </span>
+        </a>
+      </div>
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>

@@ -14,7 +14,7 @@
   box-sizing: border-box;
 }
 
-body {
+.poker {
   font-weight: 100;
   letter-spacing: -1px;
 }
@@ -30,4 +30,19 @@ body {
 .menu-open .bar.bar-header.expanded {
   background-color: #222;
   background-size: 0px
+}
+
+.menu-open .ion-navicon:before {
+	content: "\f108";
+}
+
+.title-left, 
+.title-right, 
+.title.title-left, 
+.title.title-right {
+  left: 45px !important;
+}
+
+a.item {
+  color: #444;
 }

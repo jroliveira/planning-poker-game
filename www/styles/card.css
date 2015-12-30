@@ -1,16 +1,16 @@
-.cards,
-.cards-revelead {
+.poker .cards,
+.poker .cards-revelead {
   list-style: none;
   width: 100%;
 }
 
-.cards-revelead {
+.poker .cards-revelead {
   position: absolute;
   bottom: -25px;
   max-height: 500px;
 }
 
-.card {
+.poker .card {
   margin: 5px 3% 5px 3%;
   display: inline-block;
   cursor: pointer;
@@ -34,7 +34,7 @@
   border-radius: 6px;
 }
 
-  .card .content {
+  .poker .card .content {
     z-index: 10;
     position: absolute;
     left: 50%;
@@ -47,35 +47,35 @@
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   }
 
-    .card .content h1,
-    .card .content h2,
-    .card .content span {
+    .poker .card .content h1,
+    .poker .card .content h2,
+    .poker .card .content span {
       font-family: 'Josefin-Sans';
       margin: 0;
     }
 
-      .card .content span,
-      .card .content h1,
-      .card .content h2 > sup {
+      .poker .card .content span,
+      .poker .card .content h1,
+      .poker .card .content h2 > sup {
         font-size: 31pt;
         color: #0C0B13;
       }
 
-    .card .mark,
-    .card .content .h2 {
+    .poker .card .mark,
+    .poker .card .content .h2 {
       font-size: 12px;
       top: -2px;
       left: 5px;
       color: #ffffff;
     }
 
-  .card .mark {
+  .poker .card .mark {
     font-family: 'Josefin-Sans';
     position: absolute;
     font-weight: bold;
   }
 
-    .card .mark.upside-down {
+    .poker .card .mark.upside-down {
       -moz-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
       -webkit-transform: rotate(180deg);
@@ -87,12 +87,12 @@
       right: 5px;
     }
 
-      .card .mark.upside-down:after {
+      .poker .card .mark.upside-down:after {
         color: #CCC5B3;
       }
 
-.card-back,
-.card-front {
+.poker .card-back,
+.poker .card-front {
   vertical-align: middle;
   display: table;
   margin: 0 auto;
@@ -102,33 +102,33 @@
   font-size: 72pt;
 }
 
-  .card-back .content h1,
-  .card-back .content h2 {
+  .poker .card-back .content h1,
+  .poker .card-back .content h2 {
     font-size: 22pt;
     line-height: 29px;
   }
 
-    .card-back .content h2 > sup {
+    .poker .card-back .content h2 > sup {
       font-size: 15pt;
       top: -0.3em;
     }
 
-  .card-front .mark {
+  .poker .card-front .mark {
     font-size: 27pt;
     top: 11px;
     left: 10px;
   }
 
-    .card-front .mark.upside-down {
+    .poker .card-front .mark.upside-down {
       bottom: 11px;
       right: 10px;
     }
 
-  .card-front .content span {
+  .poker .card-front .content span {
     font-size: 171pt;
   }
 
-  .card-back:before {
+  .poker .card-back:before {
     content: "";
     position: absolute;
     background: #0C0B13;
@@ -145,7 +145,7 @@
   }
 
 
-  .card-back:after {
+  .poker .card-back:after {
     content: "";
     position: absolute;
     background: rgba(225, 98, 63, 0.7);
@@ -162,26 +162,26 @@
   }
 
 
-.card-revealed {
+.poker .card-revealed {
   float: right;
   clear: both;
   z-index: 1;
   height: 60px !important;
 }
 
-  .card-revealed .content {
+  .poker .card-revealed .content {
     top: 60%;
   }
 
-  .card-revealed.border-red {
+  .poker .card-revealed.border-red {
     border-color: #ef473a !important;
   }
 
-  .card-revealed.border-green {
+  .poker .card-revealed.border-green {
     border-color: #33cd5f !important;
   }
 
-  .card-revealed .mark {
+  .poker .card-revealed .mark {
     font-size: 17pt;
     top: 0px;
   }
