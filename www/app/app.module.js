@@ -11,7 +11,8 @@
       'app.poker',
       'app.card',
       'app.login',
-      'app.about'
+      'app.about',
+      'app.settings'
     ]);
 
 })();
