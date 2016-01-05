@@ -15,16 +15,17 @@
     "shelljs": "^0.3.0"
   },
   "cordovaPlugins": [
-    "cordova-plugin-device",
-    "cordova-plugin-console",
+    "cordova-plugin-shake",
+    "cordova-plugin-device-motion",
     "cordova-plugin-whitelist",
-    "cordova-plugin-splashscreen",
-    "cordova-plugin-vibration",
-    "com.ionic.keyboard",
-    {
-      "locator": "https://github.com/leecrossley/cordova-plugin-shake.git",
-      "id": "cordova-plugin-shake"
-    }
+    "nl.x-services.plugins.insomnia",
+    "cordova-plugin-vibration"
   ],
-  "cordovaPlatforms": [ ]
+  "cordovaPlatforms": [
+    {
+      "platform": "android",
+      "version": "",
+      "locator": "android"
+    }
+  ]
 }
