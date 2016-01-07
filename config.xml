@@ -2,17 +2,26 @@
 <widget id="com.ionicframework.scrumpocker559303" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Scrum Poker</name>
   <description>
-    App mobile hibrida de Scrum Poker.
+    App mobile hibrida de Scrum Poker.&#xD;
   </description>
   <author email="junolive@gmail.com" href="http://jroliveira.net/">
     Junior Oliveira
   </author>
-  <content src="index.html" />
-  <access origin="*" />
-  <allow-navigation href="*" />
-  <preference name="webviewbounce" value="false" />
-  <preference name="UIWebViewBounce" value="false" />
-  <preference name="DisallowOverscroll" value="true" />
-  <preference name="android-minSdkVersion" value="16" />
-  <preference name="BackupWebStorage" value="none" />
+  <content src="index.html"/>
+  <access origin="*"/>
+  <allow-navigation href="*"/>
+  <preference name="webviewbounce" value="false"/>
+  <preference name="UIWebViewBounce" value="false"/>
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="android-minSdkVersion" value="16"/>
+  <preference name="BackupWebStorage" value="none"/>
+  <platform name="android">
+    <icon src="resources\android\icon\drawable-ldpi-icon.png" density="ldpi"/>
+    <icon src="resources\android\icon\drawable-mdpi-icon.png" density="mdpi"/>
+    <icon src="resources\android\icon\drawable-hdpi-icon.png" density="hdpi"/>
+    <icon src="resources\android\icon\drawable-xhdpi-icon.png" density="xhdpi"/>
+    <icon src="resources\android\icon\drawable-xxhdpi-icon.png" density="xxhdpi"/>
+    <icon src="resources\android\icon\drawable-xxxhdpi-icon.png" density="xxxhdpi"/>
+  </platform>
+  <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
 </widget>

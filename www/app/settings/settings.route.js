@@ -11,7 +11,7 @@
   function config($stateProvider) {
     $stateProvider
       .state('settings', {
-        cache: true,
+        cache: false,
         url: '/settings',
         templateUrl: 'app/settings/settings.html',
         controller: 'SettingsController as vm'

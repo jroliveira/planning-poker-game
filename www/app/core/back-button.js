@@ -5,17 +5,22 @@
     .module('app.core')
     .run(backButtonRun);
 
-  backButtonRun.$inject = ['$ionicPlatform', '$ionicPopup', 'shake'];
+  backButtonRun.$inject = ['$ionicPlatform', '$ionicHistory', '$ionicPopup', 'shake'];
 
   /* @ngInject */
-  function backButtonRun($ionicPlatform, $ionicPopup, shake) {
+  function backButtonRun($ionicPlatform, $ionicHistory, $ionicPopup, shake) {
     $ionicPlatform.ready(onReady);
 
     function onReady() {
       $ionicPlatform.registerBackButtonAction(backButton, 101);
     }
 
-    function backButton(e) {
+    function backButton() {
+      if ($ionicHistory.backView()) {
+        $ionicHistory.goBack();
+        return;
+      }
+
       var options = {
         title: 'Confirm Exit',
         template: 'Are you sure you want to exit?'
@@ -23,9 +28,6 @@
 
       var confirmPopup = $ionicPopup.confirm(options);
       confirmPopup.then(onConfirm);
-
-      e.preventDefault();
-      return false;
     }
 
     function onConfirm(close) {

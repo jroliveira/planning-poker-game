@@ -11,7 +11,7 @@
   function config($stateProvider) {
     $stateProvider
       .state('about', {
-        cache: true,
+        cache: false,
         url: '/about',
         templateUrl: 'app/about/about.html',
         controller: 'AboutController as vm'

@@ -10,15 +10,10 @@
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   margin: 0 auto;
-  width: 94px;
-  height: 94px;
+  width: 96px;
+  height: 96px;
   overflow: hidden;
 }
-
-  .about .picture img {
-    width: 94px;
-    border-radius: 100%;
-  }
 
 .about .name {
   padding-top: 20px;
@@ -33,7 +28,7 @@
 }
 
 .about a,
-.about a:hover, 
+.about a:hover,
 .about a:focus {
   text-decoration: none;
   color: #444;

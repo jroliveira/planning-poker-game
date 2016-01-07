@@ -19,7 +19,8 @@
     "cordova-plugin-device-motion",
     "cordova-plugin-whitelist",
     "nl.x-services.plugins.insomnia",
-    "cordova-plugin-vibration"
+    "cordova-plugin-vibration",
+    "cordova-plugin-inappbrowser"
   ],
   "cordovaPlatforms": [
     {

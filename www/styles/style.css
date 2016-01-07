@@ -29,16 +29,16 @@
 
 .menu-open .bar.bar-header.expanded {
   background-color: #222;
-  background-size: 0px
+  background-size: 0px;
 }
 
 .menu-open .ion-navicon:before {
-	content: "\f108";
+  content: "\f108";
 }
 
-.title-left, 
-.title-right, 
-.title.title-left, 
+.title-left,
+.title-right,
+.title.title-left,
 .title.title-right {
   left: 45px !important;
 }
