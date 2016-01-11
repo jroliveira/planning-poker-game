@@ -1,0 +1,11 @@
+.poker .cards,
+.poker .cards-revelead {
+  list-style: none;
+  width: 100%;
+}
+
+.poker .cards-revelead {
+  position: absolute;
+  bottom: -25px;
+  max-height: 500px;
+}

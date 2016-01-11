@@ -1,15 +1,3 @@
-.poker .cards,
-.poker .cards-revelead {
-  list-style: none;
-  width: 100%;
-}
-
-.poker .cards-revelead {
-  position: absolute;
-  bottom: -25px;
-  max-height: 500px;
-}
-
 .poker .card {
   margin: 5px 3% 5px 3%;
   display: inline-block;
@@ -159,29 +147,4 @@
     bottom: -50px;
     left: 62px;
     right: 60px;
-  }
-
-
-.poker .card-revealed {
-  float: right;
-  clear: both;
-  z-index: 1;
-  height: 60px !important;
-}
-
-  .poker .card-revealed .content {
-    top: 60%;
-  }
-
-  .poker .card-revealed.border-red {
-    border-color: #ef473a !important;
-  }
-
-  .poker .card-revealed.border-green {
-    border-color: #33cd5f !important;
-  }
-
-  .poker .card-revealed .mark {
-    font-size: 17pt;
-    top: 0px;
   }

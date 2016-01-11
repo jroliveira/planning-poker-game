@@ -11,7 +11,7 @@
   function PokerController($scope, socket, users, cards) {
     var vm = this;
     vm.users = users;
-    vm.cards = cards;
+    vm.cards = cards.fibonacci;
 
     $scope.$on('socket:connect', onConnected);
 

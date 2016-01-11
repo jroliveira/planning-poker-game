@@ -1,0 +1,7 @@
+.poker .users {
+  list-style: none;
+  position: absolute;
+  bottom: -160px;
+  max-height: 40px;
+  width: 100%;
+}

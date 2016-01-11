@@ -5,10 +5,10 @@
     .module('app.settings')
     .controller('SettingsController', SettingsController);
 
-  SettingsController.$inject = ['navigator', 'insomnia', 'shake'];
+  SettingsController.$inject = ['navigator', 'insomnia', 'shake', 'shakeSensitivity', 'vibrateDuration'];
 
   /* @ngInject */
-  function SettingsController(navigator, insomnia, shake) {
+  function SettingsController(navigator, insomnia, shake, shakeSensitivity, vibrateDuration) {
     var vm = this;
     vm.keepScreen = {
       activated: true,
@@ -22,36 +22,13 @@
 
     vm.shake = {
       activated: true,
-      sensitivity: {
-        min: 18,
-        actual: 20,
-        max: 38
-      },
+      sensitivity: shakeSensitivity,
       active: shakeActive
     };
 
     vm.vibrate = {
       activated: true,
-      duration: {
-        actual: {
-          id: '1',
-          name: '1 sec.'
-        },
-        options: [
-          {
-            id: '1',
-            name: '1 sec.'
-          },
-          {
-            id: '2',
-            name: '2 sec.'
-          },
-          {
-            id: '3',
-            name: '3 sec.'
-          }
-        ]
-      },
+      duration: vibrateDuration,
       active: shakeActive
     };
 

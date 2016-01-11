@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.scrumpocker559303" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="net.jroliveira.scrum-poker" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Scrum Poker</name>
   <description>
-    App mobile hibrida de Scrum Poker.&#xD;
+    App mobile hibrida de Scrum Poker.
   </description>
   <author email="junolive@gmail.com" href="http://jroliveira.net/">
     Junior Oliveira

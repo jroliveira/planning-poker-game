@@ -1,7 +1,7 @@
 {
-  "name": "scrum-poker",
+  "name": "scrum-poker-mobile",
   "version": "1.0.0",
-  "description": "scrum-poker: An Ionic project",
+  "description": "App mobile híbrida de scrum poker",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-concat": "^2.2.0",

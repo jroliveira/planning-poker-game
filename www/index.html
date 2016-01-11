@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -10,11 +10,14 @@
   <link rel="stylesheet" type="text/css" href="lib/ionic-material/dist/ionic.material.min.css">
 
   <!-- app's css -->
-  <link rel="stylesheet" type="text/css" href="styles/style.css">
-  <link rel="stylesheet" type="text/css" href="styles/card.css">
-  <link rel="stylesheet" type="text/css" href="styles/user.css">
-  <link rel="stylesheet" type="text/css" href="styles/about.css">
-  <link rel="stylesheet" type="text/css" href="styles/settings.css">
+  <link rel="stylesheet" type="text/css" href="app/app.css">
+  <link rel="stylesheet" type="text/css" href="app/core/styles/card.css">
+  <link rel="stylesheet" type="text/css" href="app/core/styles/cards.css">
+  <link rel="stylesheet" type="text/css" href="app/card/card-revealed.css">
+  <link rel="stylesheet" type="text/css" href="app/poker/user.css">
+  <link rel="stylesheet" type="text/css" href="app/poker/users.css">
+  <link rel="stylesheet" type="text/css" href="app/about/about.css">
+  <link rel="stylesheet" type="text/css" href="app/settings/settings.css">
 </head>
 
 <body ng-app="app">
@@ -38,36 +41,31 @@
   <script type="text/javascript" src="app/blocks/exception/exception-handler.config.js"></script>
   <script type="text/javascript" src="app/blocks/exception/exception-handler.provider.js"></script>
   <script type="text/javascript" src="app/blocks/exception/exception.js"></script>
-
   <script type="text/javascript" src="app/blocks/logger/logger.module.js"></script>
   <script type="text/javascript" src="app/blocks/logger/airbrake.js"></script>
   <script type="text/javascript" src="app/blocks/logger/logger.js"></script>
 
   <script type="text/javascript" src="app/core/core.module.js"></script>
-  <script type="text/javascript" src="app/core/constants.js"></script>
+  <script type="text/javascript" src="app/core/core.constant.js"></script>
+  <script type="text/javascript" src="app/core/plugins.constant.js"></script>
   <script type="text/javascript" src="app/core/handler-error.js"></script>
-  <script type="text/javascript" src="app/core/back-button.js"></script>
+  <script type="text/javascript" src="app/core/run/back-button.js"></script>
   <script type="text/javascript" src="app/core/socket.js"></script>
   <script type="text/javascript" src="app/core/users.js"></script>
-
   <script type="text/javascript" src="app/core/models/user.js"></script>
-
-  <script type="text/javascript" src="app/core/plugins/cordova.js"></script>
-  <script type="text/javascript" src="app/core/plugins/shake.js"></script>
-  <script type="text/javascript" src="app/core/plugins/insomnia.js"></script>
-
+  <script type="text/javascript" src="app/core/run/plugins/cordova.js"></script>
+  <script type="text/javascript" src="app/core/run/plugins/shake.js"></script>
+  <script type="text/javascript" src="app/core/run/plugins/insomnia.js"></script>
   <script type="text/javascript" src="app/core/directives/card.directive.js"></script>
+  <script type="text/javascript" src="app/core/directives/app-version.directive.js"></script>
 
   <script type="text/javascript" src="app/main/main.module.js"></script>
   <script type="text/javascript" src="app/main/main.route.js"></script>
 
-  <script type="text/javascript" src="app/core/plugins/cordova.js"></script>
-  <script type="text/javascript" src="app/core/plugins/shake.js"></script>
-  <script type="text/javascript" src="app/core/plugins/insomnia.js"></script>
-
   <script type="text/javascript" src="app/poker/poker.module.js"></script>
   <script type="text/javascript" src="app/poker/poker.route.js"></script>
   <script type="text/javascript" src="app/poker/poker.controller.js"></script>
+  <script type="text/javascript" src="app/poker/cards.constant.js"></script>
 
   <script type="text/javascript" src="app/card/card.module.js"></script>
   <script type="text/javascript" src="app/card/card.route.js"></script>
@@ -79,11 +77,12 @@
 
   <script type="text/javascript" src="app/about/about.module.js"></script>
   <script type="text/javascript" src="app/about/about.route.js"></script>
-  <script type="text/javascript" src="app/about/about.controller.js"></script>
-  
+
   <script type="text/javascript" src="app/settings/settings.module.js"></script>
   <script type="text/javascript" src="app/settings/settings.route.js"></script>
   <script type="text/javascript" src="app/settings/settings.controller.js"></script>
+  <script type="text/javascript" src="app/settings/vibrate-duration.constant.js"></script>
+  <script type="text/javascript" src="app/settings/shake-sensitivity.constant.js"></script>
 </body>
 
 </html>
