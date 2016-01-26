@@ -5,20 +5,20 @@
     .module('app.core')
     .run(cordovaRun);
 
-  cordovaRun.$inject = ['$ionicPlatform', 'cordova', 'logger'];
+  cordovaRun.$inject = ['$ionicPlatform', 'logger'];
 
   /* @ngInject */
-  function cordovaRun($ionicPlatform, cordova, logger) {
+  function cordovaRun($ionicPlatform, logger) {
     $ionicPlatform.ready(onReady);
 
     function onReady() {
-      if (cordova && cordova.plugins && cordova.plugins.Keyboard) {
-        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-        cordova.plugins.Keyboard.disableScroll(true);
+      if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+        window.cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        window.cordova.plugins.Keyboard.disableScroll(true);
       }
 
-      if (cordova && cordova.InAppBrowser && cordova.InAppBrowser.open) {
-        window.open = cordova.InAppBrowser.open;
+      if (window.cordova && window.cordova.InAppBrowser && window.cordova.InAppBrowser.open) {
+        window.open = window.cordova.InAppBrowser.open;
       } else {
         logger.error('Can not load plugin inappbrowser');
       }

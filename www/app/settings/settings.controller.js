@@ -5,10 +5,10 @@
     .module('app.settings')
     .controller('SettingsController', SettingsController);
 
-  SettingsController.$inject = ['vibration', 'keepAwake', 'stir', 'shakeSensitivity', 'vibrateDuration'];
+  SettingsController.$inject = ['shakeSensitivity', 'vibrateDuration'];
 
   /* @ngInject */
-  function SettingsController(vibration, keepAwake, stir, shakeSensitivity, vibrateDuration) {
+  function SettingsController(shakeSensitivity, vibrateDuration) {
     var vm = this;
     vm.keepScreen = {
       activated: true,
@@ -29,20 +29,20 @@
       activate: activateVibrate
     };
     vm.plugin = {
-      keepAwake: !!keepAwake,
-      stir: !!stir,
-      vibrate: !!vibration
+      keepAwake: window.plugins && window.plugins.insomnia && window.plugins.insomnia.keepAwake,
+      stir: window.shake && window.shake.startWatch,
+      vibrate: navigator && navigator.vibrate
     }
 
     function activateKeepScreen(active) {
-      if (!keepAwake) {
+      if (!window.plugins || !window.plugins.insomnia || !window.plugins.insomnia.keepAwake) {
         return;
       }
 
       if (active) {
-        keepAwake.activate();
+        window.plugins.insomnia.keepAwake(null, onError);
       } else {
-        keepAwake.deactivate();
+        window.plugins.insomnia.allowSleepAgain(null, onError);
       }
     }
 
@@ -51,19 +51,25 @@
     }
 
     function activateShake(active) {
-      if (!stir) {
+      if (!window.shake || !window.shake.startWatch) {
         return;
       }
 
       if (active) {
-        stir.activate();
+        var sensitivity = 20;
+
+        window.shake.startWatch(onShake, sensitivity, onError);
       } else {
-        stir.deactivate();
+        window.shake.stopWatch();
       }
     }
 
     function activateVibrate() {
 
+    }
+
+    function onError(err) {
+      logger.error(JSON.stringify(err));
     }
   }
 

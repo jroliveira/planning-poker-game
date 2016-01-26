@@ -5,3 +5,4 @@ node_modules/
 platforms/
 www/lib/
 /plugins/
+npm-debug.log

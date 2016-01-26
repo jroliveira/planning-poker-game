@@ -16,8 +16,17 @@
     };
     vm.send = send;
 
+    socket.then(socketLoaded);
+
+    var _client;
+    function socketLoaded(client) {
+      _client = client;
+    }
+
     function send(user) {
-      socket.emit('join', user);
+      if (_client) {
+        _client.emit('join', user);
+      }
 
       var options = {
         title: 'Information',

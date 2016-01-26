@@ -6,6 +6,7 @@
       'ionic',
       'ionic-material',
       'btford.socket-io',
+      'angularLoad',
       'app.core',
       'app.main',
       'app.poker',

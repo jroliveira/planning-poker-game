@@ -5,19 +5,19 @@
     .module('app.core')
     .run(backButtonRun);
 
-  backButtonRun.$inject = ['$ionicPlatform', '$ionicPopup', '$location', '$state', 'stir'];
+  backButtonRun.$inject = ['$ionicPlatform', '$ionicPopup', '$state'];
 
   /* @ngInject */
-  function backButtonRun($ionicPlatform, $ionicPopup, $location, $state, stir) {
+  function backButtonRun($ionicPlatform, $ionicPopup, $state) {
     $ionicPlatform.ready(onReady);
 
     function onReady() {
-      $ionicPlatform.registerBackButtonAction(backButton, 101);
+      $ionicPlatform.registerBackButtonAction(backButton, 151);
     }
 
     function backButton() {
       if ($state.current.name !== 'game.poker') {
-        $location.url('/poker');
+        $state.go('game.poker');
         return;
       }
 
@@ -35,8 +35,8 @@
         return;
       }
 
-      if (stir) {
-        stir.deactivate();
+      if (window.shake && window.shake.stopWatch) {
+        window.shake.stopWatch();
       }
 
       ionic.Platform.exitApp();

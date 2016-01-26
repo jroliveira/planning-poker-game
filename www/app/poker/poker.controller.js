@@ -16,11 +16,18 @@
     $scope.$on('socket:connect', onConnected);
 
     function onConnected() {
-      vm.connected = true;
+      $scope.$apply(connectedChanged);
+      socket.then(socketLoaded);
+    }
 
-      socket.on('joined', onJoined);
-      socket.on('user joined', vm.users.add);
-      socket.on('user left', vm.users.remove);
+    function connectedChanged() {
+      vm.connected = true;
+    }
+
+    function socketLoaded(client) {
+      client.on('joined', onJoined);
+      client.on('user joined', vm.users.add);
+      client.on('user left', vm.users.remove);
     }
 
     function onJoined(data) {

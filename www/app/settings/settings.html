@@ -50,7 +50,7 @@
       <div class="item item-divider">
         Vibrate
       </div>
-      <div ng-show="vm.plugin.vibrate">
+      <div ng-show="vm.plugin.vibrate && vm.plugin.stir">
         <ion-toggle class="item-icon-left" toggle-class="toggle-dark" ng-model="vm.vibrate.activated" ng-change="vm.vibrate.active()">
           <i class="icon ion-ios-gear"></i> Vibrate when shake
           <p>Vibrate the phone, when shake to reveal card.</p>
@@ -62,7 +62,7 @@
           <select ng-model="vm.vibrate.duration.defaults" ng-options="option.name for option in vm.vibrate.duration.options track by option.id"></select>
         </label>
       </div>
-      <div class="item item-icon-left" ng-show="!vm.plugin.vibrate">
+      <div class="item item-icon-left" ng-show="!vm.plugin.vibrate || !vm.plugin.stir">
         <i class="icon ion-ios-gear"></i> Vibrate when shake
         <p>Can not load vibrate shake.</p>
       </div>

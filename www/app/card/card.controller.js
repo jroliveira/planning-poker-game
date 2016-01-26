@@ -5,10 +5,10 @@
     .module('app.card')
     .controller('CardController', CardController);
 
-  CardController.$inject = ['$scope', '$rootScope', '$stateParams', 'vibration', 'socket', 'users'];
+  CardController.$inject = ['$scope', '$rootScope', '$stateParams', 'socket', 'users'];
 
   /* @ngInject */
-  function CardController($scope, $rootScope, $stateParams, vibration, socket, users) {
+  function CardController($scope, $rootScope, $stateParams, socket, users) {
     var vm = this;
     vm.users = users;
     vm.selected = $stateParams.card;
@@ -16,8 +16,15 @@
 
     $rootScope.$on('user:shake', onShake);
 
-    if (vm.users.any()) {
-      socket.on('card revealed', vm.users.update);
+    socket.then(socketLoaded);
+
+    var _client;
+    function socketLoaded(client) {
+      _client = client;
+
+      if (vm.users.any()) {
+        _client.on('card revealed', vm.users.update);
+      }
     }
 
     function reveal(card) {
@@ -27,8 +34,8 @@
         $scope.$apply(revealedChanged);
       }
 
-      if (vm.users.any()) {
-        socket.emit('card reveal', card);
+      if (vm.users.any() && _client) {
+        _client.emit('card reveal', card);
       }
     }
 
@@ -40,8 +47,8 @@
       if (vm.selected && !vm.revealed) {
         vm.reveal(vm.selected);
 
-        if (vibration) {
-          vibration.vibrate(1000);
+        if (navigator && navigator.vibrate) {
+          navigator.vibrate(1000);
         }
       }
     }

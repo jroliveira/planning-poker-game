@@ -8,6 +8,7 @@
   "dependencies": {
     "ionic-material": "~0.4.2",
     "angular-socket-io": "~0.7.0",
-    "airbrake-js": "~0.5.8"
+    "airbrake-js": "~0.5.8",
+    "angular-load": "~0.4.1"
   }
 }
