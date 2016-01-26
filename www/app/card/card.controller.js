@@ -5,10 +5,10 @@
     .module('app.card')
     .controller('CardController', CardController);
 
-  CardController.$inject = ['$scope', '$rootScope', '$stateParams', 'navigator', 'socket', 'users'];
+  CardController.$inject = ['$scope', '$rootScope', '$stateParams', 'vibration', 'socket', 'users'];
 
   /* @ngInject */
-  function CardController($scope, $rootScope, $stateParams, navigator, socket, users) {
+  function CardController($scope, $rootScope, $stateParams, vibration, socket, users) {
     var vm = this;
     vm.users = users;
     vm.selected = $stateParams.card;
@@ -40,8 +40,8 @@
       if (vm.selected && !vm.revealed) {
         vm.reveal(vm.selected);
 
-        if (navigator && navigator.vibrate) {
-          navigator.vibrate(1000);
+        if (vibration) {
+          vibration.vibrate(1000);
         }
       }
     }

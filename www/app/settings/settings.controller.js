@@ -5,44 +5,64 @@
     .module('app.settings')
     .controller('SettingsController', SettingsController);
 
-  SettingsController.$inject = ['navigator', 'insomnia', 'shake', 'shakeSensitivity', 'vibrateDuration'];
+  SettingsController.$inject = ['vibration', 'keepAwake', 'stir', 'shakeSensitivity', 'vibrateDuration'];
 
   /* @ngInject */
-  function SettingsController(navigator, insomnia, shake, shakeSensitivity, vibrateDuration) {
+  function SettingsController(vibration, keepAwake, stir, shakeSensitivity, vibrateDuration) {
     var vm = this;
     vm.keepScreen = {
       activated: true,
-      active: keepScreenActive
+      activate: activateKeepScreen
     };
-
     vm.tap = {
       activated: true,
-      active: shakeActive
+      activate: activateTap
     };
-
     vm.shake = {
       activated: true,
       sensitivity: shakeSensitivity,
-      active: shakeActive
+      actiactivateve: activateShake
     };
-
     vm.vibrate = {
       activated: true,
       duration: vibrateDuration,
-      active: shakeActive
+      activate: activateVibrate
     };
-
     vm.plugin = {
-      keepScreen: insomnia && insomnia.keepAwake,
-      shake: shake && shake.startWatch,
-      vibrate: navigator && navigator.vibrate
+      keepAwake: !!keepAwake,
+      stir: !!stir,
+      vibrate: !!vibration
     }
 
-    function keepScreenActive() {
+    function activateKeepScreen(active) {
+      if (!keepAwake) {
+        return;
+      }
+
+      if (active) {
+        keepAwake.activate();
+      } else {
+        keepAwake.deactivate();
+      }
+    }
+
+    function activateTap() {
 
     }
 
-    function shakeActive() {
+    function activateShake(active) {
+      if (!stir) {
+        return;
+      }
+
+      if (active) {
+        stir.activate();
+      } else {
+        stir.deactivate();
+      }
+    }
+
+    function activateVibrate() {
 
     }
   }

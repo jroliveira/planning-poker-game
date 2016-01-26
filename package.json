@@ -1,7 +1,7 @@
 {
   "name": "scrum-poker-mobile",
   "version": "1.0.0",
-  "description": "App mobile híbrida de scrum poker",
+  "description": "App mobile hÃ­brida de scrum poker",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-concat": "^2.2.0",
