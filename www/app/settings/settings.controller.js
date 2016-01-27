@@ -5,10 +5,10 @@
     .module('app.settings')
     .controller('SettingsController', SettingsController);
 
-  SettingsController.$inject = ['shakeSensitivity', 'vibrateDuration'];
+  SettingsController.$inject = ['shakeSensitivity', 'vibrateDuration', 'agitate', 'keepAwake'];
 
   /* @ngInject */
-  function SettingsController(shakeSensitivity, vibrateDuration) {
+  function SettingsController(shakeSensitivity, vibrateDuration, agitate, keepAwake) {
     var vm = this;
     vm.keepScreen = {
       activated: true,
@@ -21,7 +21,7 @@
     vm.shake = {
       activated: true,
       sensitivity: shakeSensitivity,
-      actiactivateve: activateShake
+      activate: activateShake
     };
     vm.vibrate = {
       activated: true,
@@ -30,19 +30,15 @@
     };
     vm.plugin = {
       keepAwake: window.plugins && window.plugins.insomnia && window.plugins.insomnia.keepAwake,
-      stir: window.shake && window.shake.startWatch,
+      agitate: window.shake && window.shake.startWatch,
       vibrate: navigator && navigator.vibrate
     }
 
-    function activateKeepScreen(active) {
-      if (!window.plugins || !window.plugins.insomnia || !window.plugins.insomnia.keepAwake) {
-        return;
-      }
-
-      if (active) {
-        window.plugins.insomnia.keepAwake(null, onError);
+    function activateKeepScreen() {
+      if (vm.keepScreen.activated) {
+        keepAwake.activate();
       } else {
-        window.plugins.insomnia.allowSleepAgain(null, onError);
+        keepAwake.deactivate();
       }
     }
 
@@ -50,26 +46,16 @@
 
     }
 
-    function activateShake(active) {
-      if (!window.shake || !window.shake.startWatch) {
-        return;
-      }
-
-      if (active) {
-        var sensitivity = 20;
-
-        window.shake.startWatch(onShake, sensitivity, onError);
+    function activateShake() {
+      if (vm.shake.activated) {
+        agitate.activate(vm.shake.sensitivity.defaults);
       } else {
-        window.shake.stopWatch();
+        agitate.deactivate();
       }
     }
 
     function activateVibrate() {
 
-    }
-
-    function onError(err) {
-      logger.error(JSON.stringify(err));
     }
   }
 

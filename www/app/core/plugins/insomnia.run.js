@@ -1,14 +1,14 @@
-﻿(function () {
+(function () {
   'use strict';
 
   angular
     .module('app.core')
     .run(insomniaRun);
 
-  insomniaRun.$inject = ['$ionicPlatform', 'logger'];
+  insomniaRun.$inject = ['$ionicPlatform', 'logger', 'keepAwake'];
 
   /* @ngInject */
-  function insomniaRun($ionicPlatform, logger) {
+  function insomniaRun($ionicPlatform, logger, keepAwake) {
     $ionicPlatform.ready(onReady);
 
     function onReady() {
@@ -17,11 +17,7 @@
         return;
       }
 
-      window.plugins.insomnia.keepAwake(null, onError);
-    }
-
-    function onError(err) {
-      logger.error('Insomnia on error: ' + JSON.stringify(err));
+      keepAwake.activate();
     }
   }
 

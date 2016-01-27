@@ -24,7 +24,7 @@
         error: data.exception
       };
 
-      airbrake.notify(notify);
+      //airbrake.notify(notify);
     }
   }
 

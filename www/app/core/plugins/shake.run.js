@@ -1,14 +1,14 @@
-﻿(function () {
+(function () {
   'use strict';
 
   angular
     .module('app.core')
     .run(shakeRun);
 
-  shakeRun.$inject = ['$ionicPlatform', '$rootScope', 'logger'];
+  shakeRun.$inject = ['$ionicPlatform', 'logger', 'agitate'];
 
   /* @ngInject */
-  function shakeRun($ionicPlatform, $rootScope, logger) {
+  function shakeRun($ionicPlatform, logger, agitate) {
     $ionicPlatform.ready(onReady);
 
     function onReady() {
@@ -19,15 +19,7 @@
 
       var sensitivity = 20;
 
-      window.shake.startWatch(onShake, sensitivity, onError);
-    }
-
-    function onShake() {
-      $rootScope.$emit('user:shake');
-    }
-
-    function onError(err) {
-      logger.error('Shake on error: ' + JSON.stringify(err));
+      agitate.activate(sensitivity);
     }
   }
 
