@@ -6,6 +6,6 @@
 
 .poker .cards-revelead {
   position: absolute;
-  bottom: -25px;
+  bottom: 10px;
   max-height: 500px;
 }

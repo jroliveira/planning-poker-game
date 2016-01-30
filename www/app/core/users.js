@@ -13,9 +13,10 @@
 
     return {
       add: add,
-      update: update,
       remove: remove,
       reset: reset,
+      revealCard: revealCard,
+      clearCards: clearCards,
       get: get,
       any: any
     };
@@ -24,12 +25,18 @@
       _users[data.id] = new User(data.name, null);
     }
 
-    function update(data) {
+    function remove(data) {
+      delete _users[data.id];
+    }
+
+    function revealCard(data) {
       _users[data.userId].card = data.points;
     }
 
-    function remove(data) {
-      delete _users[data.id];
+    function clearCards() {
+      angular.forEach(_users, function (user) {
+        user.card = null;
+      });
     }
 
     function get() {

@@ -21,7 +21,7 @@
 
       window.shake.startWatch(onShake, sensitivity, onError);
     }
-    
+
     function onShake() {
       $rootScope.$emit('user:shake');
     }
