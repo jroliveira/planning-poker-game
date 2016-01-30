@@ -5,10 +5,10 @@
     .module('app.settings')
     .controller('SettingsController', SettingsController);
 
-  SettingsController.$inject = ['shakeSensitivity', 'vibrateDuration', 'agitate', 'keepAwake'];
+  SettingsController.$inject = ['shakeSensitivity', 'vibrateDuration', 'agitate', 'keepAwake', 'vibration', 'touch'];
 
   /* @ngInject */
-  function SettingsController(shakeSensitivity, vibrateDuration, agitate, keepAwake) {
+  function SettingsController(shakeSensitivity, vibrateDuration, agitate, keepAwake, vibration, touch) {
     var vm = this;
     vm.keepScreen = {
       activated: true,
@@ -20,12 +20,18 @@
     };
     vm.shake = {
       activated: true,
-      sensitivity: shakeSensitivity,
-      activate: activateShake
+      sensitivity: {
+        values: shakeSensitivity,
+        change: changeSensitivity
+      },
+      activate: activateShake,
     };
     vm.vibrate = {
       activated: true,
-      duration: vibrateDuration,
+      duration: {
+        values: vibrateDuration,
+        change: changeDuration
+      },
       activate: activateVibrate
     };
     vm.plugin = {
@@ -43,19 +49,32 @@
     }
 
     function activateTap() {
-
+      touch.activate(vm.tap.activated);
     }
 
     function activateShake() {
       if (vm.shake.activated) {
-        agitate.activate(vm.shake.sensitivity.defaults);
+        agitate.activate(vm.shake.sensitivity.values.defaults);
       } else {
         agitate.deactivate();
       }
     }
 
-    function activateVibrate() {
+    function changeSensitivity() {
+      if (!vm.shake.activated) {
+        return;
+      }
 
+      agitate.deactivate();
+      agitate.activate(vm.shake.sensitivity.values.defaults);
+    }
+
+    function activateVibrate() {
+      vibration.activate(vm.vibrate.activated);
+    }
+
+    function changeDuration() {
+      vibration.update(vm.vibrate.duration.values.defaults.id);
     }
   }
 

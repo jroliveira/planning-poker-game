@@ -1,7 +1,16 @@
 {
-  "name": "scrum-poker-mobile",
-  "version": "1.0.0",
+  "name": "Scrum Poker (mobile)",
+  "version": "2.0.0",
   "description": "App mobile híbrida de scrum poker",
+  "homepage": "https://github.com/jroliveira/scrum-poker-mobile#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jroliveira/scrum-poker-mobile.git"
+  },
+  "author": "Junior Oliveira",
+  "bugs": {
+    "url": "https://github.com/jroliveira/scrum-poker-mobile/issues"
+  },
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-concat": "^2.2.0",

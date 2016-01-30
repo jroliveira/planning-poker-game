@@ -5,51 +5,53 @@
     .module('app.card')
     .controller('CardController', CardController);
 
-  CardController.$inject = ['$scope', '$rootScope', '$stateParams', 'socket', 'users'];
+  CardController.$inject = ['$scope', '$rootScope', '$stateParams', 'socket', 'users', 'vibration', 'touch'];
 
   /* @ngInject */
-  function CardController($scope, $rootScope, $stateParams, socket, users) {
+  function CardController($scope, $rootScope, $stateParams, socket, users, vibration, touch) {
     var vm = this;
     vm.users = users;
     vm.selected = $stateParams.card;
-    vm.reveal = reveal;
+    vm.onTap = onTap;
+    
+    vm.users.clearCards();
 
     $rootScope.$on('user:shake', onShake);
 
     socket.then(socketLoaded);
 
     var _client;
+
     function socketLoaded(client) {
       _client = client;
 
       if (vm.users.any()) {
-        _client.on('card revealed', vm.users.update);
+        _client.on('card revealed', vm.users.revealCard);
       }
-    }
-
-    function reveal(card) {
-      if ($scope.$$phase) {
-        revealedChanged();
-      } else {
-        $scope.$apply(revealedChanged);
-      }
-
-      if (vm.users.any() && _client) {
-        _client.emit('card reveal', card);
-      }
-    }
-
-    function revealedChanged() {
-      vm.revealed = true;
     }
 
     function onShake() {
-      if (vm.selected && !vm.revealed) {
-        vm.reveal(vm.selected);
+      if (!vm.selected || vm.revealed) {
+        return;
+      }
 
-        if (navigator && navigator.vibrate) {
-          navigator.vibrate(1000);
-        }
+      vibration.vibrate();
+      $scope.$apply(reveal);
+    }
+
+    function onTap() {
+      if (!touch.isEnable()) {
+        return;
+      }
+
+      reveal();
+    }
+
+    function reveal() {
+      vm.revealed = true;
+
+      if (vm.users.any() && _client) {
+        _client.emit('card reveal', vm.selected);
       }
     }
   }

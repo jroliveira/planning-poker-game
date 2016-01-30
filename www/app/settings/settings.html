@@ -31,15 +31,21 @@
           <i class="icon ion-ios-gear"></i> Shake to reveal
           <p>After choosing a card, shake the phone to reveal it.</p>
         </ion-toggle>
-        <div class="item item-icon-left item-icon-right no-border">
-          <i class="icon ion-ios-gear"></i> Sensitivity
-          <p>Choose shake sensitivity.</p>
-          <a class="icon ion-ios-eye-outline" ui-sref="card({ card: '8' })"></a>
+        <div ng-show="vm.shake.activated">
+          <div class="item item-icon-left item-icon-right no-border">
+            <i class="icon ion-ios-gear"></i> Sensitivity
+            <p>Choose shake sensitivity.</p>
+            <a class="icon ion-checkmark-circled" ng-click="vm.shake.sensitivity.change()"></a>
+          </div>
+          <div class="item range no-border" style="top: -15px; padding: 0px 20px 0px 20px;">
+            <i class="icon ion-minus-round"></i>
+            <input type="range" name="volume" min="{{ vm.shake.sensitivity.values.min }}" max="{{ vm.shake.sensitivity.values.max }}" ng-model="vm.shake.sensitivity.values.defaults">
+            <i class="icon ion-plus-round"></i>
+          </div>
         </div>
-        <div class="item range no-border" style="top: -15px; padding: 0px 20px 0px 20px;">
-          <i class="icon ion-minus-round"></i>
-          <input type="range" name="volume" min="{{ vm.shake.sensitivity.min }}" max="{{ vm.shake.sensitivity.max }}" ng-model="vm.shake.sensitivity.defaults">
-          <i class="icon ion-plus-round"></i>
+        <div class="item item-icon-left" ng-show="!vm.shake.activated">
+          <i class="icon ion-ios-gear"></i> Sensitivity
+          <p>Shake is not activated.</p>
         </div>
       </div>
       <div class="item item-icon-left" ng-show="!vm.plugin.agitate">
@@ -55,12 +61,16 @@
           <i class="icon ion-ios-gear"></i> Vibrate when shake
           <p>Vibrate the phone, when shake to reveal card.</p>
         </ion-toggle>
-        <label class="item item-input item-select">
+        <label class="item item-input item-select" ng-show="vm.vibrate.activated">
           <div class="input-label">
             Choose vibration time.
           </div>
-          <select ng-model="vm.vibrate.duration.defaults" ng-options="option.name for option in vm.vibrate.duration.options track by option.id"></select>
+          <select ng-model="vm.vibrate.duration.values.defaults" ng-options="option.name for option in vm.vibrate.duration.values.options track by option.id" ng-change="vm.vibrate.duration.change()"></select>
         </label>
+        <div class="item item-icon-left" ng-show="!vm.vibrate.activated">
+          <i class="icon ion-ios-gear"></i> Vibration time
+          <p>Vibrate when shake is not activated.</p>
+        </div>
       </div>
       <div class="item item-icon-left" ng-show="!vm.plugin.vibrate || !vm.plugin.agitate">
         <i class="icon ion-ios-gear"></i> Vibrate when shake

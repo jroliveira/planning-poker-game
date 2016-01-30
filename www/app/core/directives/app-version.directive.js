@@ -1,9 +1,9 @@
-﻿(function () {
+(function () {
   'use strict';
 
   angular
     .module('app.core')
-    .value('version', '1.0')
+    .value('version', '2.0')
     .directive('appVersion', appVersion);
 
   appVersion.$inject = ['version'];
