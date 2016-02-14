@@ -26,7 +26,7 @@
       _client = client;
 
       if (vm.users.any()) {
-        _client.on('card revealed', vm.users.revealCard);
+        _client.on('card:revealed', vm.users.revealCard);
       }
     }
 
@@ -51,7 +51,7 @@
       vm.revealed = true;
 
       if (vm.users.any() && _client) {
-        _client.emit('card reveal', vm.selected);
+        _client.emit('card:reveal', vm.selected);
       }
     }
   }

@@ -26,8 +26,8 @@
 
     function socketLoaded(client) {
       client.on('joined', onJoined);
-      client.on('user joined', vm.users.add);
-      client.on('user left', vm.users.remove);
+      client.on('user:joined', vm.users.add);
+      client.on('user:left', vm.users.remove);
     }
 
     function onJoined(data) {
@@ -35,7 +35,7 @@
 
       vm.users.reset();
 
-      angular.forEach(data, vm.users.add);
+      angular.forEach(data.users, vm.users.add);
     }
   }
 
