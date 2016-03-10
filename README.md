@@ -8,11 +8,10 @@ App mobile híbrida de scrum poker feita com o [framework ionic](http://ionicfra
 
 ### Installing
 
-* `npm install http-server -g`
+* `npm install -g http-server`
+* `npm install -g cordova ionic`
 * `git clone https://github.com/jroliveira/scrum-poker-mobile.git`
 * `npm install`
-* `bower install`
-* `ionic state restore`
 
 ### How to use it
 
@@ -23,7 +22,7 @@ App mobile híbrida de scrum poker feita com o [framework ionic](http://ionicfra
 
 * `ionic build`
 
-### Contributions 
+### Contributions
 
 1. Fork it
 2. git checkout -b <branch-name>
