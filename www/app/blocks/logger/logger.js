@@ -1,14 +1,14 @@
-(function () {
+(function() {
   'use strict';
 
   angular
     .module('blocks.logger')
     .factory('logger', logger);
 
-  logger.$inject = ['airbrake'];
+  logger.$inject = ['marinete'];
 
   /* @ngInject */
-  function logger(airbrake) {
+  function logger(marinete) {
     return {
       error: error
     };
@@ -20,11 +20,10 @@
         }
       };
 
-      var notify = {
-        error: data.exception
-      };
-
-      airbrake.notify(notify);
+      marinete.error({
+        message: message,
+        exception: data.exception
+      });
     }
   }
 
