@@ -1,6 +1,6 @@
 {
   "name": "scrum-poker-mobile",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.0.0",
     "platform": "~1.3.0"
@@ -8,6 +8,7 @@
   "dependencies": {
     "ionic-material": "~0.4.2",
     "angular-socket-io": "~0.7.0",
-    "angular-load": "~0.4.1"
+    "angular-load": "~0.4.1",
+    "stacktrace-js": "~1.0.4"
   }
 }

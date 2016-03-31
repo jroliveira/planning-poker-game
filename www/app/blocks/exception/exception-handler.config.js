@@ -1,4 +1,4 @@
-(function () {
+(function() {
   'use strict';
 
   angular
@@ -12,24 +12,33 @@
     $provide.decorator('$exceptionHandler', extendExceptionHandler);
   }
 
-  extendExceptionHandler.$inject = ['$delegate', 'exceptionHandler', 'logger'];
+  extendExceptionHandler.$inject = ['$delegate', 'exceptionHandler', 'logger', 'stacktrace'];
 
   /* @ngInject */
-  function extendExceptionHandler($delegate, exceptionHandler, logger) {
+  function extendExceptionHandler($delegate, exceptionHandler, logger, stacktrace) {
     return func;
 
     function func(exception, cause) {
       var appErrorPrefix = exceptionHandler.config.appErrorPrefix || '';
-      var errorData = {
-        exception: exception,
-        cause: cause
-      };
 
       exception.message = appErrorPrefix + exception.message;
+
       $delegate(exception, cause);
 
-      logger.error(exception.message, errorData);
+      stacktrace
+        .fromError(exception)
+        .then(callback);
+
+      function callback(stackframes) {
+        var stack = stackframes.map(map).join('\n');
+
+        function map(sf) {
+          return sf.toString();
+        }
+
+        logger.error(exception.message, stack);
+      }
     }
   }
-  
+
 })();

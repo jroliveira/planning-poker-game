@@ -5,25 +5,26 @@
     .module('blocks.logger')
     .factory('logger', logger);
 
-  logger.$inject = ['marinete'];
+  logger.$inject = ['$injector'];
 
   /* @ngInject */
-  function logger(marinete) {
+  function logger($injector) {
+    var $http = angular.injector(['ng']).get('$http');
+    if (!$http) {
+      return;
+    }
+
     return {
       error: error
     };
 
-    function error(message, data, title) {
-      data = data || {
-        exception: {
-          message: message
-        }
+    function error(message, stack, title) {
+      var error = {
+        message: message,
+        exception: stack
       };
 
-      marinete.error({
-        message: message,
-        exception: data.exception
-      });
+      $http.post('https://scrum-poker-api.herokuapp.com/errors', error);
     }
   }
 
