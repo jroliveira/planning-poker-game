@@ -7,7 +7,7 @@
 
   function card() {
     return {
-      restrict: 'AC',
+      restrict: 'C',
       link: function (scope, element, attr) {
         element.bind('click', function (e) {
           e.stopPropagation();

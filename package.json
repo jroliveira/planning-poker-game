@@ -2,10 +2,10 @@
   "name": "scrum-poker-mobile",
   "version": "2.0.4",
   "description": "App mobile híbrida de scrum poker",
-  "homepage": "https://github.com/jroliveira/scrum-poker-mobile#readme",
+  "homepage": "https://github.com/scrum-poker/scrum-poker-mobile#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jroliveira/scrum-poker-mobile.git"
+    "url": "https://github.com/scrum-poker/scrum-poker-mobile.git"
   },
   "author": {
     "name": "Junior Oliveira",
@@ -13,7 +13,7 @@
     "url": "http://jroliveira.net"
   },
   "bugs": {
-    "url": "https://github.com/jroliveira/scrum-poker-mobile/issues"
+    "url": "https://github.com/scrum-poker/scrum-poker-mobile/issues"
   },
   "readmeFilename": "README.md",
   "scripts": {
@@ -27,7 +27,7 @@
     "cordova-plugin-shake",
     "cordova-plugin-device-motion",
     "cordova-plugin-whitelist",
-    "nl.x-services.plugins.insomnia",
+    "cordova-plugin-insomnia",
     "cordova-plugin-vibration",
     "cordova-plugin-inappbrowser"
   ],

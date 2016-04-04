@@ -1,32 +1,20 @@
-(function () {
+(function() {
   'use strict';
 
   angular
     .module('app.login')
     .controller('LoginController', LoginController);
 
-  LoginController.$inject = ['socket', '$ionicPopup', '$location'];
+  LoginController.$inject = ['$ionicPopup', '$location', 'session'];
 
   /* @ngInject */
-  function LoginController(socket, $ionicPopup, $location) {
+  function LoginController($ionicPopup, $location, session) {
     var vm = this;
-    vm.user = {
-      name: '',
-      room: ''
-    };
+    vm.user = {};
     vm.send = send;
 
-    socket.then(socketLoaded);
-
-    var _client;
-    function socketLoaded(client) {
-      _client = client;
-    }
-
     function send(user) {
-      if (_client) {
-        _client.emit('join', user);
-      }
+      session.join(user.room, user.name);
 
       var options = {
         title: 'Information',

@@ -1,42 +1,18 @@
-(function () {
+(function() {
   'use strict';
 
   angular
     .module('app.poker')
     .controller('PokerController', PokerController);
 
-  PokerController.$inject = ['$scope', 'socket', 'users', 'cards'];
+  PokerController.$inject = ['$scope', 'session', 'cards'];
 
   /* @ngInject */
-  function PokerController($scope, socket, users, cards) {
+  function PokerController($scope, session, cards) {
     var vm = this;
-    vm.users = users;
     vm.cards = cards.fibonacci;
+    vm.session = session;
 
-    $scope.$on('socket:connect', onConnected);
-
-    function onConnected() {
-      $scope.$apply(connectedChanged);
-      socket.then(socketLoaded);
-    }
-
-    function connectedChanged() {
-      vm.connected = true;
-    }
-
-    function socketLoaded(client) {
-      client.on('joined', onJoined);
-      client.on('user:joined', vm.users.add);
-      client.on('user:left', vm.users.remove);
-    }
-
-    function onJoined(data) {
-      vm.joined = true;
-
-      vm.users.reset();
-
-      angular.forEach(data.users, vm.users.add);
-    }
+    $scope.$on('socket:connect', session.load);
   }
-
 })();

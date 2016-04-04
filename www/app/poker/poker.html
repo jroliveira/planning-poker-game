@@ -2,8 +2,9 @@
   <ion-header-bar class="bar-dark">
   </ion-header-bar>
   <ion-content class="poker" scroll="false">
+    <div class="alert text-center" ng-class="vm.session.getMessage().type">{{ vm.session.getMessage().value }}</div>
     <ul class="users">
-      <li class="user" ng-repeat="user in vm.users.get()">
+      <li class="user" ng-repeat="user in vm.session.getUsers()">
         <div class="content">
           <span ng-bind-html="user.name | limitTo:2"></span>
         </div>
@@ -22,7 +23,11 @@
       </li>
     </ul>
   </ion-content>
-  <button ng-show="vm.connected" ng-class="vm.joined ? 'button-balanced' : 'button-energized-900'" class="button button-fab button-fab-bottom-right" ui-sref="login">
+  <button ng-show="vm.session.isConnected()" ng-class="vm.session.isLogged() ? 'button-balanced' : 'button-energized-900'" class="button button-fab button-fab-bottom-right" ui-sref="login">
     <i class="icon ion-cloud light"></i>
+  </button>
+
+  <button ng-show="!vm.session.isConnected()" class="button button-stable button-fab button-fab-bottom-right" disabled>
+    <i class="icon ion-cloud dark"></i>
   </button>
 </ion-view>

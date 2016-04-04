@@ -1,8 +1,9 @@
 <ion-view view-title="Card">
   <ion-content class="poker" scroll="false">
+    <div class="alert text-center" ng-class="vm.session.getMessage().type">{{ vm.session.getMessage().value }}</div>
     <ul class="cards-revelead">
-      <li ng-class="user.card == vm.selected ? 'border-green' : 'border-red'" ng-show="vm.selected && user.name" class="card card-revealed" ng-repeat="user in vm.users.get()">
-        <div ng-bind-html="user.card" class="mark"></div>
+      <li ng-class="user.card.points == vm.card ? 'border-green' : 'border-red'" ng-show="vm.card && user.name" class="card card-revealed" ng-repeat="user in vm.session.getUsers()">
+        <div ng-bind-html="user.card.points" class="mark"></div>
 
         <div class="content">
           <span ng-bind-html="user.name | limitTo:2"></span>
@@ -11,21 +12,21 @@
     </ul>
 
     <ul class="cards">
-      <li ng-show="vm.selected && !vm.revealed" class="card card-back" ng-click="vm.onTap()">
+      <li ng-show="vm.card && !vm.revealed" class="card card-back" ng-click="vm.reveal()">
         <div class="content">
           <h1>PLANNING</h1>
           <h2><sup>SCRUM</sup>POKER</h2>
         </div>
       </li>
 
-      <li ng-show="vm.revealed" class="card card-front" ui-sref="game.poker">
-        <div ng-bind-html="vm.selected" class="mark"></div>
+      <li ng-show="vm.revealed" class="card card-front" ng-click="vm.clearCard()">
+        <div ng-bind-html="vm.card" class="mark"></div>
 
         <div class="content">
-          <span ng-bind-html="vm.selected"></span>
+          <span ng-bind-html="vm.card"></span>
         </div>
 
-        <div ng-bind-html="vm.selected" class="mark upside-down"></div>
+        <div ng-bind-html="vm.card" class="mark upside-down"></div>
       </li>
     </ul>
   </ion-content>

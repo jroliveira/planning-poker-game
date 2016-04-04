@@ -1,4 +1,4 @@
-(function () {
+(function() {
   'use strict';
 
   angular
@@ -16,12 +16,6 @@
       .then(done)
       .catch(error);
 
-    function error() {
-      logger.error('Can not load socket.io');
-
-      deferred.resolve(null);
-    }
-
     function done() {
       var server = io.connect('https://scrum-poker-api.herokuapp.com');
 
@@ -35,7 +29,12 @@
       deferred.resolve(factory);
     }
 
+    function error() {
+      logger.error('Can not load socket.io');
+
+      deferred.resolve(null);
+    }
+
     return deferred.promise;
   }
-
 })();

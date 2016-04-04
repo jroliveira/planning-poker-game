@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Josefin-Sans';
-  src: url('../fonts/Josefin-Sans.ttf.woff') format('woff'), 
-       url('../fonts/Josefin-Sans.ttf.svg#Josefin-Sans') format('svg'), 
-       url('../fonts/Josefin-Sans.ttf.eot'), 
+  src: url('../fonts/Josefin-Sans.ttf.woff') format('woff'),
+       url('../fonts/Josefin-Sans.ttf.svg#Josefin-Sans') format('svg'),
+       url('../fonts/Josefin-Sans.ttf.eot'),
        url('../fonts/Josefin-Sans.ttf.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
@@ -46,3 +46,31 @@
 a.item {
   color: #444;
 }
+
+.alert {
+  margin-bottom: 5px;
+  border: 1px solid transparent;
+  padding: 5px;
+}
+
+  .alert:empty {
+    display: none;
+  }
+
+  .alert.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+  }
+
+  .alert.error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+  }
+
+  .alert.warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+  }

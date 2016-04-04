@@ -1,7 +1,5 @@
 # Scrum Poker (mobile)
 
-[![Code Climate](https://codeclimate.com/github/jroliveira/scrum-poker-mobile/badges/gpa.svg)](https://codeclimate.com/github/jroliveira/scrum-poker-mobile)
-
 ![Scrum Poker (mobile) - Logo][logo]
 
 App mobile híbrida de scrum poker feita com o [framework ionic](http://ionicframework.com/).
@@ -10,7 +8,7 @@ App mobile híbrida de scrum poker feita com o [framework ionic](http://ionicfra
 
 * `npm install -g http-server`
 * `npm install -g cordova ionic`
-* `git clone https://github.com/jroliveira/scrum-poker-mobile.git`
+* `git clone https://github.com/scrum-poker/scrum-poker-mobile.git`
 * `npm install`
 
 ### How to use it
@@ -30,4 +28,4 @@ App mobile híbrida de scrum poker feita com o [framework ionic](http://ionicfra
 4. git push origin <branch-name>
 5. Create a pull request
 
-[logo]: https://raw.githubusercontent.com/jroliveira/scrum-poker-mobile/master/logo.png "Scrum Poker (mobile) - Logo"
+[logo]: https://raw.githubusercontent.com/scrum-poker/scrum-poker-mobile/master/logo.png "Scrum Poker (mobile) - Logo"
