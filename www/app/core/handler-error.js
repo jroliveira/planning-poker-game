@@ -3,7 +3,7 @@
 
   var config = {
     appErrorPrefix: '[Error] ',
-    appTitle: 'scrum-poker'
+    appTitle: 'planning-poker'
   };
 
   angular

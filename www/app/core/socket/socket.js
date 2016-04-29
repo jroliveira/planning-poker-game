@@ -12,12 +12,12 @@
     var deferred = $q.defer();
 
     angularLoad
-      .loadScript('https://scrum-poker-api.herokuapp.com/socket.io/socket.io.js')
+      .loadScript('http://api.planning-poker.io/socket.io/socket.io.js')
       .then(done)
       .catch(error);
 
     function done() {
-      var server = io.connect('https://scrum-poker-api.herokuapp.com');
+      var server = io.connect('http://api.planning-poker.io');
 
       var options = {
         ioSocket: server

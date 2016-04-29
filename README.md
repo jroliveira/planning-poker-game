@@ -1,14 +1,14 @@
-# Scrum Poker (mobile)
+# Planning Poker (mobile)
 
-![Scrum Poker (mobile) - Logo][logo]
+![Planning Poker (mobile) - Logo][logo]
 
-App mobile híbrida de scrum poker feita com o [framework ionic](http://ionicframework.com/).
+App mobile híbrida de planning poker feita com o [framework ionic](http://ionicframework.com/).
 
 ### Installing
 
 * `npm install -g http-server`
 * `npm install -g cordova ionic`
-* `git clone https://github.com/scrum-poker/scrum-poker-mobile.git`
+* `git clone https://github.com/planning-poker/planning-poker-mobile.git`
 * `npm install`
 
 ### How to use it
@@ -28,4 +28,4 @@ App mobile híbrida de scrum poker feita com o [framework ionic](http://ionicfra
 4. git push origin <branch-name>
 5. Create a pull request
 
-[logo]: https://raw.githubusercontent.com/scrum-poker/scrum-poker-mobile/master/logo.png "Scrum Poker (mobile) - Logo"
+[logo]: https://raw.githubusercontent.com/planning-poker/planning-poker-mobile/master/logo.png "Planning Poker (mobile) - Logo"

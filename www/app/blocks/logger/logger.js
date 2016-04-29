@@ -24,7 +24,7 @@
         exception: stack
       };
 
-      $http.post('https://scrum-poker-api.herokuapp.com/errors', error);
+      $http.post('http://api.planning-poker.io/errors', error);
     }
   }
 

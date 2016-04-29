@@ -20,7 +20,7 @@
     $rootScope.$on('user:shake', onShake);
 
     function onShake() {
-      if (!vm.selected || vm.revealed) {
+      if (!vm.card || vm.revealed) {
         return;
       }
 
