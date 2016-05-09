@@ -1,5 +1,7 @@
 # Planning Poker (mobile)
 
+[![Code Climate](https://codeclimate.com/github/planning-poker/planning-poker-mobile/badges/gpa.svg)](https://codeclimate.com/github/planning-poker/planning-poker-mobile)
+
 ![Planning Poker (mobile) - Logo][logo]
 
 App mobile híbrida de planning poker feita com o [framework ionic](http://ionicframework.com/).

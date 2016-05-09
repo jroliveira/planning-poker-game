@@ -4,8 +4,8 @@
   <description>
     App mobile hibrida de Planning Poker.
   </description>
-  <author email="junolive@gmail.com" href="http://jroliveira.net/">
-    Junior Oliveira
+  <author email="junolive@gmail.com" href="http://planning-poker.io">
+    Planning Poker
   </author>
   <content src="index.html"/>
   <access origin="*"/>

@@ -28,6 +28,10 @@
     }
 
     function load() {
+      if (_client) {
+        return;
+      }
+
       socket.then(setup);
 
       function setup(client) {

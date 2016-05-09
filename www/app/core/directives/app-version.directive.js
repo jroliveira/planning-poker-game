@@ -3,7 +3,7 @@
 
   angular
     .module('app.core')
-    .value('version', '2.1')
+    .value('version', '2.0')
     .directive('appVersion', appVersion);
 
   appVersion.$inject = ['version'];

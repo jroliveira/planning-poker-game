@@ -41,6 +41,10 @@
     }
 
     function setup(client) {
+      if (_client) {
+        return;
+      }
+
       _client = client;
       _message = {};
 
@@ -59,6 +63,7 @@
     }
 
     function _logged(data) {
+      _message = {};
       _room = new Room(data.room);
       _user = new User(data.user.id, data.user.name, _room.name);
       _updateUsers(data);
