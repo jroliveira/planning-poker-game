@@ -2,7 +2,9 @@
 # http://git-scm.com/docs/gitignore
 
 node_modules/
+bower_components/
 platforms/
-www/lib/
 /plugins/
 npm-debug.log
+www/
+temp/

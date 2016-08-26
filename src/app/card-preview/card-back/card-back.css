@@ -1,0 +1,67 @@
+.card-back {
+  height: 400px;
+  width: 260px;
+  cursor: pointer;
+  background: #CCC5B3;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  overflow: hidden;
+  border: solid 1px #696969;
+  border-radius: 6px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.card-back:before {
+  content: "";
+  position: absolute;
+  background: #0C0B13;
+  transform: rotate(72deg) translate(75px, 20px);
+  top: 20px;
+  bottom: 0;
+  left: 0;
+  right: -30px;
+  border-left: solid 111px #664C4F;
+}
+
+.card-back:after {
+  content: "";
+  position: absolute;
+  background: rgba(225, 98, 63, 0.7);
+  transform: rotate(58deg) translate(0px, 0px);
+  top: -50px;
+  bottom: -50px;
+  left: 62px;
+  right: 60px;
+}
+
+.card-back__content {
+  letter-spacing: -1px;
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-back__title {
+  font-size: 22pt;
+  line-height: 29px;
+  color: #0C0B13;
+  font-family: 'Josefin-Sans';
+  margin: 0;
+}
+
+.card-back__subtitle {
+  font-size: 22pt;
+  line-height: 29px;
+  font-family: 'Josefin-Sans';
+  margin: 0;
+}
+
+.card-back__title-mark {
+  font-size: 15pt;
+  top: -0.3em;
+  color: #0C0B13;
+}

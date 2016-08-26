@@ -1,0 +1,26 @@
+# Dependencies
+markdown: redcarpet
+
+pygments: false
+
+# Permalinks
+permalink: pretty
+
+# Setup
+title: planning poker web
+url: game.planning-poker.io
+
+author:
+  name: planning-poker.io
+
+exclude:
+  - "Gruntfile.coffee"
+  - "bower_components"
+  - "bower.json"
+  - "node_modules"
+  - "package.json"
+  - ".gitignore"
+  - "README.md"
+
+include:
+  - .nojekyll

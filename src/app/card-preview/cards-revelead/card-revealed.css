@@ -1,0 +1,45 @@
+.card-revelead-list {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  font-family: 'Josefin-Sans';
+  z-index: 1;
+}
+
+.card-revealed-list__item {
+  float: right;
+  clear: both;
+  height: 60px;
+  width: 19%;
+  cursor: pointer;
+  background: #CCC5B3;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+  border: solid 1px transparent;
+  border-radius: 6px;
+  margin: 5px 3% 5px 3%;
+}
+
+.card-revealed-list__item--points-different {
+  border-color: #ef473a;
+}
+
+.card-revealed-list__item--points-equal {
+  border-color: #33cd5f;
+}
+
+.card-revealed-list__item-content {
+  position: relative;
+  font-size: 31pt;
+  color: #0C0B13;
+  text-align: center;
+  top: 5px;
+}
+
+.card-revealed-list__item-mark {
+  font-size: 17pt;
+  color: #ffffff;
+  position: relative;
+  font-weight: bold;
+  margin: 5px 0 0 5px;
+  height: 15px;
+}

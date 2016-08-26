@@ -1,10 +1,9 @@
 {
-  "esversion": 6,
   "bitwise": true,
   "camelcase": true,
   "curly": true,
   "eqeqeq": true,
-  "es3": false,
+  "esversion": 6,
   "forin": true,
   "freeze": true,
   "immed": true,
@@ -50,9 +49,12 @@
   "supernew": false,
   "validthis": false,
   "noyield": false,
+
   "browser": true,
   "node": true,
+
   "globals": {
-    "angular": false
+    "angular": false,
+    "$": false
   }
 }

@@ -1,0 +1,35 @@
+<ion-view>
+  <ion-header-bar class="game__header" align-title="center">
+    <div class="buttons buttons-left header-item">
+      <span class="left-buttons">
+        <button class="button button-icon button-clear ion-android-arrow-back" ui-sref="home"></button>
+      </span>
+    </div>
+
+    <h1 class="title">Login</h1>
+  </ion-header-bar>
+
+  <ion-content scroll="false">
+    <div class="list login__form">
+      <label class="login__form-item item item-input item-floating-label">
+        <span class="input-label">
+          Room
+        </span>
+
+        <input ng-model="$ctrl.player.room" type="text" placeholder="Room">
+      </label>
+
+      <label class="login__form-item item item-input item-floating-label">
+        <span class="input-label">
+          Player
+        </span>
+
+        <input ng-model="$ctrl.player.name" type="text" placeholder="Player">
+      </label>
+
+      <button class="button button-block button-positive" ng-click="$ctrl.send($ctrl.player)">
+        Send
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

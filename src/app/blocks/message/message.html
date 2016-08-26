@@ -1,0 +1,7 @@
+<div
+  class="message text-center"
+  ng-class="{
+    'message--state-warning': $ctrl.type == 'warning',
+    'message--state-error': $ctrl.type == 'error',
+    'message--state-success': $ctrl.type == 'success' }"
+  ng-bind="$ctrl.text"></div>

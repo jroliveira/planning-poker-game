@@ -1,0 +1,9 @@
+.card-front {
+  height: 400px;
+  width: 260px;
+  font-size: 171pt;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  position: absolute;
+}

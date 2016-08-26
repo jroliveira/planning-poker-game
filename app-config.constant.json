@@ -1,0 +1,7 @@
+{
+  "appConfig": {
+    "api": {
+      "url": "http://api.planning-poker.io"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.player-list {
+  font-family: 'Josefin-Sans';
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  padding-right: 80px;
+}
+
+.player-list__item {
+  position: relative;
+  float: right;
+  height: 40px;
+  width: 19%;
+  margin: 5px 3% 5px 3%;
+  background: #CCC5B3;
+  border: solid 1px #696969;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+
+.player-list__item-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.player-list__item-player-name {
+  font-size: 25pt;
+}

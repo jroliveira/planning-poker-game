@@ -8,19 +8,22 @@ App mobile híbrida de planning poker feita com o [framework ionic](http://ionic
 
 ### Installing
 
-* `npm install -g http-server`
-* `npm install -g cordova ionic`
-* `git clone https://github.com/planning-poker/planning-poker-mobile.git`
-* `npm install`
+``` bash
+$ git clone https://github.com/planning-poker/planning-poker-mobile.git
+$ npm install
+```
 
 ### How to use it
 
-* `http-serve`
-* `localhost:8080/www`
+``` bash
+$ npm start
+```
 
 ### Build
 
-* `ionic build`
+``` bash
+$ npm run pkg
+```
 
 ### Contributions
 

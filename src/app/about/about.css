@@ -1,0 +1,43 @@
+.about-list__item {
+  text-align: center;
+  border: none;
+  font-size: 14px;
+  width: 100%;
+  min-height: 48px;
+}
+
+.about__logo-image {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 3px;
+  border-radius: 50%;
+  box-sizing: content-box;
+  margin: 0 auto;
+  width: 96px;
+  height: 96px;
+}
+
+.about__product-name {
+  padding-top: 20px;
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.about__form-button,
+.about__form-button:hover,
+.about__form-button:focus {
+  text-decoration: none;
+  color: #444;
+}
+
+.about__form-icon {
+  font-size: 22pt;
+}
+
+.about__footer {
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  position: absolute;
+  text-align: center;
+}

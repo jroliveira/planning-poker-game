@@ -1,0 +1,8 @@
+.login__form {
+  padding: 16px;
+}
+
+.login__form-item {
+  border: none;
+  border-bottom: solid 1px #ccc;
+}

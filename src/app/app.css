@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'Josefin-Sans';
+  font-weight: normal;
+  font-style: normal;
+  src:
+    url('../fonts/Josefin-Sans.ttf.woff') format('woff'),
+    url('../fonts/Josefin-Sans.ttf.svg#Josefin-Sans') format('svg'),
+    url('../fonts/Josefin-Sans.ttf.eot'),
+    url('../fonts/Josefin-Sans.ttf.eot?#iefix') format('embedded-opentype');
+}
+
+.game__header {
+  border-color: #6FA1B2;
+  background-color: #6FA1B2;
+  background-image: linear-gradient(0deg, #6FA1B2, #6FA1B2 50%, transparent 50%);
+}
+
+.game__header .title {
+  color: #fff;
+}
+
+.game__header .button:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.game__header .button.button-icon {
+  border-color: transparent;
+  background: none;
+  width: 36px;
+}
+
+.game__header .button.ion-android-arrow-back::before {
+  font-size: 24px;
+}
+
+.game__header .button.button-clear {
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+  color: #fff;
+}

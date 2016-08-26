@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Game ~ Planning Poker</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="planning-poker.io">
+  <meta name="title" content="Game ~ Planning Poker">
+  <meta name="description" content="App de planning poker.">
+  <meta name="keywords" content="scrum, planning, agile">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Planning Poker">
+  <meta property="og:url" content="http://game.planning-poker.io">
+  <meta property="og:title" content="Game ~ Planning Poker">
+  <meta property="og:description" content="App de planning poker.">
+
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="img/favicon.png">
+
+  <!-- build:css css/lib.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/ionic/release/css/ionic.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css css/app.css -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/src/app/app.css">
+  <link rel="stylesheet" href="/src/app/about/about.css">
+  <link rel="stylesheet" href="/src/app/card-preview/card-preview.css">
+  <link rel="stylesheet" href="/src/app/game/game.css">
+  <link rel="stylesheet" href="/src/app/login/login.css">
+  <link rel="stylesheet" href="/src/app/blocks/card/card.css">
+  <link rel="stylesheet" href="/src/app/blocks/message/message.css">
+  <link rel="stylesheet" href="/src/app/card-preview/card-back/card-back.css">
+  <link rel="stylesheet" href="/src/app/card-preview/cards-revelead/card-revealed.css">
+  <link rel="stylesheet" href="/src/app/game/home/home.css">
+  <link rel="stylesheet" href="/src/app/game/home/players-logged-in/players-logged-in.css">
+  <!-- endinject -->
+  <!-- endbuild -->
+</head>
+
+<body ng-app="planningPoker">
+  <ion-nav-view></ion-nav-view>
+
+  <!-- build:js js/lib.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.js"></script>
+  <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="/bower_components/ionic/release/js/ionic.js"></script>
+  <script src="/bower_components/ionic/release/js/ionic-angular.js"></script>
+  <script src="/bower_components/angular-socket-io/socket.js"></script>
+  <script src="/bower_components/angular-load/angular-load.js"></script>
+  <script src="/bower_components/stacktrace-js/dist/stacktrace-with-promises-and-json-polyfills.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:js js/app.js -->
+  <!-- inject:js -->
+  <script src="/src/app/app.module.js"></script>
+  <script src="/src/app/about/about.module.js"></script>
+  <script src="/src/app/card-preview/card-preview.module.js"></script>
+  <script src="/src/app/core/core.module.js"></script>
+  <script src="/src/app/game/game.module.js"></script>
+  <script src="/src/app/login/login.module.js"></script>
+  <script src="/src/app/settings/settings.module.js"></script>
+  <script src="/src/app/blocks/card/card.module.js"></script>
+  <script src="/src/app/blocks/exception/exception.module.js"></script>
+  <script src="/src/app/blocks/logger/logger.module.js"></script>
+  <script src="/src/app/blocks/message/message.module.js"></script>
+  <script src="/src/app/game/home/home.module.js"></script>
+  <script src="/src/app/app-config.constant.js"></script>
+  <script src="/src/app/app.run.js"></script>
+  <script src="/src/app/config.js"></script>
+  <script src="/src/app/route.js"></script>
+  <script src="/src/app/about/about.component.js"></script>
+  <script src="/src/app/about/about.route.js"></script>
+  <script src="/src/app/card-preview/card-preview.component.js"></script>
+  <script src="/src/app/card-preview/card-preview.route.js"></script>
+  <script src="/src/app/card-preview/cards-api.factory.js"></script>
+  <script src="/src/app/core/app-version.directive.js"></script>
+  <script src="/src/app/core/handler-error.js"></script>
+  <script src="/src/app/core/stop-propagation.directive.js"></script>
+  <script src="/src/app/game/game.route.js"></script>
+  <script src="/src/app/login/login.component.js"></script>
+  <script src="/src/app/login/login.route.js"></script>
+  <script src="/src/app/login/users-api.factory.js"></script>
+  <script src="/src/app/settings/settings.component.js"></script>
+  <script src="/src/app/settings/settings.route.js"></script>
+  <script src="/src/app/settings/shake-sensitivity.constant.js"></script>
+  <script src="/src/app/settings/vibrate-duration.constant.js"></script>
+  <script src="/src/app/blocks/card/card.component.js"></script>
+  <script src="/src/app/blocks/exception/exception-handler.config.js"></script>
+  <script src="/src/app/blocks/exception/exception-handler.provider.js"></script>
+  <script src="/src/app/blocks/exception/exception.js"></script>
+  <script src="/src/app/blocks/exception/stacktrace.js"></script>
+  <script src="/src/app/blocks/logger/logger.js"></script>
+  <script src="/src/app/blocks/message/message.component.js"></script>
+  <script src="/src/app/blocks/message/message.js"></script>
+  <script src="/src/app/card-preview/card-back/card-back.component.js"></script>
+  <script src="/src/app/card-preview/cards-revelead/cards-revelead.component.js"></script>
+  <script src="/src/app/core/plugins/back-button.run.js"></script>
+  <script src="/src/app/core/plugins/cordova.run.js"></script>
+  <script src="/src/app/core/plugins/insomnia.run.js"></script>
+  <script src="/src/app/core/plugins/shake.run.js"></script>
+  <script src="/src/app/core/plugins/vibrate.run.js"></script>
+  <script src="/src/app/core/session/card.js"></script>
+  <script src="/src/app/core/session/player.js"></script>
+  <script src="/src/app/core/session/room.js"></script>
+  <script src="/src/app/core/session/session.js"></script>
+  <script src="/src/app/core/socket/events.config.js"></script>
+  <script src="/src/app/core/socket/socket.config.js"></script>
+  <script src="/src/app/core/socket/socket.js"></script>
+  <script src="/src/app/game/home/cards-storage.constant.js"></script>
+  <script src="/src/app/game/home/home.component.js"></script>
+  <script src="/src/app/game/home/home.route.js"></script>
+  <script src="/src/app/core/plugins/drivers/agitate.js"></script>
+  <script src="/src/app/core/plugins/drivers/keep-awake.js"></script>
+  <script src="/src/app/core/plugins/drivers/touch.js"></script>
+  <script src="/src/app/core/plugins/drivers/vibration.js"></script>
+  <script src="/src/app/core/socket/events/on-updated.event.js"></script>
+  <script src="/src/app/game/home/players-logged-in/players-logged-in.component.js"></script>
+  <script src="/src/app/core/socket/events/card/on-chosen.event.js"></script>
+  <script src="/src/app/core/socket/events/card/on-cleared.event.js"></script>
+  <script src="/src/app/core/socket/events/card/on-revealed.event.js"></script>
+  <script src="/src/app/core/socket/events/player/on-disconnect.event.js"></script>
+  <script src="/src/app/core/socket/events/player/on-joined.event.js"></script>
+  <script src="/src/app/core/socket/events/player/on-reconnect.event.js"></script>
+  <!-- endinject -->
+  <!-- inject:templates.js -->
+  <!-- endinject -->
+  <!-- endbuild -->
+</body>
+
+</html>
