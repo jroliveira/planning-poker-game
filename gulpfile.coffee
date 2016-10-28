@@ -86,10 +86,7 @@ gulp.task 'clean-fonts', ->
   del "#{config.build}fonts/*"
 
 gulp.task 'clean', ->
-  del "#{config.build}css/*.*"
-  del "#{config.build}img/**/*.*"
-  del "#{config.build}fonts/*.*"
-  del "#{config.build}js/*.*"
+  del config.build
   del config.temp
 
 gulp.task 'test', [], (done) ->
@@ -101,6 +98,11 @@ gulp.task 'test', [], (done) ->
 gulp.task 'generate-package', ['build'], $.shell.task [
   'ionic build android --release'
 ]
+
+gulp.task 'generate-web', ['build'], ->
+  gulp
+    .src config.webdep
+    .pipe gulp.dest(config.build)
 
 gulp.task 'serve-local', [
   'wiredep'

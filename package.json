@@ -20,6 +20,7 @@
     "test": "gulp test",
     "prod": "gulp clean && gulp serve-production",
     "pkg": "gulp clean && gulp generate-package",
+    "webpkg": "gulp clean && gulp generate-web",
     "build": "gulp clean && gulp build",
     "config": "gulp wiredep",
     "postinstall": "bower install && ionic state restore"

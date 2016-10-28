@@ -40,3 +40,12 @@
   box-shadow: none;
   color: #fff;
 }
+
+@media screen and (min-width: 450px) {
+  .game {
+    width: 450px;
+    left: 50%;
+    margin-left: -225px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+  }
+}
