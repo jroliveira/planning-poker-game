@@ -2,9 +2,9 @@
 <widget id="io.planningpoker" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Planning Poker</name>
   <description>
-    App mobile hibrida de Planning Poker.
+    Progressive web app de planning poker.
   </description>
-  <author email="junolive@gmail.com" href="http://planning-poker.io">
+  <author email="junolive@gmail.com" href="http://planning-poker.github.io">
     Planning Poker
   </author>
   <content src="index.html"/>

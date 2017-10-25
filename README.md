@@ -7,7 +7,7 @@
 
 ![Planning Poker (game) - Logo][logo]
 
-App mobile híbrida de planning poker feita com o [framework ionic](http://ionicframework.com/).
+Progressive web app de planning poker feita com o [framework ionic](http://ionicframework.com/).
 
 ### Installing
 

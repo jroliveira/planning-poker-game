@@ -4,7 +4,7 @@
   angular.module("planningPoker")
 .constant("appConfig", {
   "api": {
-    "url": "http://api.planning-poker.io"
+    "url": "https://planning-poker-api.herokuapp.com"
   }
 });
 
