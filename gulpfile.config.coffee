@@ -31,9 +31,10 @@ module.exports =
     "#{bowerPath}ionic/release/fonts/*.*"
   ]
   webdep: [
-    './.nojekyll'
-    './_config.yml'
-    './CNAME'
+    './src/.nojekyll'
+    './src/_config.yml'
+    './src/manifest.json'
+    './src/sw.js'
   ]
   templateCache:
     file: 'templates.js'

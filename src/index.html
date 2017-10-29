@@ -28,9 +28,11 @@
   <meta name="msapplication-TileImage" content="img/logo.png">
   <meta name="msapplication-TileColor" content="#6FA1B2">
   <meta name="application-name" content="Planning Poker" />
+  <meta name="theme-color" content="#360643">
 
   <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+  <link rel="manifest" href="manifest.json">
 
   <!-- build:css css/lib.css -->
   <!-- bower:css -->
@@ -57,6 +59,22 @@
 <body ng-app="planningPoker">
   <ion-nav-view class="game"></ion-nav-view>
 
+  <noscript>
+    <p>Please enable JavaScript on your browser</p>
+  </noscript>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(function () {
+          console.log('service worker registered');
+        })
+        .catch(function () {
+          console.warn('service worker failed');
+        });
+    }
+  </script>
+
   <!-- build:js js/lib.js -->
   <!-- bower:js -->
   <script src="/bower_components/angular/angular.js"></script>
@@ -79,8 +97,8 @@
   <script src="/src/app/game/game.module.js"></script>
   <script src="/src/app/login/login.module.js"></script>
   <script src="/src/app/settings/settings.module.js"></script>
-  <script src="/src/app/blocks/exception/exception.module.js"></script>
   <script src="/src/app/blocks/card/card.module.js"></script>
+  <script src="/src/app/blocks/exception/exception.module.js"></script>
   <script src="/src/app/blocks/logger/logger.module.js"></script>
   <script src="/src/app/blocks/message/message.module.js"></script>
   <script src="/src/app/game/home/home.module.js"></script>
@@ -104,11 +122,11 @@
   <script src="/src/app/settings/settings.route.js"></script>
   <script src="/src/app/settings/shake-sensitivity.constant.js"></script>
   <script src="/src/app/settings/vibrate-duration.constant.js"></script>
+  <script src="/src/app/blocks/card/card.component.js"></script>
   <script src="/src/app/blocks/exception/exception-handler.config.js"></script>
   <script src="/src/app/blocks/exception/exception-handler.provider.js"></script>
   <script src="/src/app/blocks/exception/exception.js"></script>
   <script src="/src/app/blocks/exception/stacktrace.js"></script>
-  <script src="/src/app/blocks/card/card.component.js"></script>
   <script src="/src/app/blocks/logger/logger.js"></script>
   <script src="/src/app/blocks/message/message.component.js"></script>
   <script src="/src/app/blocks/message/message.js"></script>
@@ -119,13 +137,13 @@
   <script src="/src/app/core/plugins/insomnia.run.js"></script>
   <script src="/src/app/core/plugins/shake.run.js"></script>
   <script src="/src/app/core/plugins/vibrate.run.js"></script>
-  <script src="/src/app/core/socket/events.config.js"></script>
-  <script src="/src/app/core/socket/socket.config.js"></script>
-  <script src="/src/app/core/socket/socket.js"></script>
   <script src="/src/app/core/session/card.js"></script>
   <script src="/src/app/core/session/player.js"></script>
   <script src="/src/app/core/session/room.js"></script>
   <script src="/src/app/core/session/session.js"></script>
+  <script src="/src/app/core/socket/events.config.js"></script>
+  <script src="/src/app/core/socket/socket.config.js"></script>
+  <script src="/src/app/core/socket/socket.js"></script>
   <script src="/src/app/game/home/cards-storage.constant.js"></script>
   <script src="/src/app/game/home/home.component.js"></script>
   <script src="/src/app/game/home/home.route.js"></script>

@@ -44,7 +44,7 @@ gulp.task 'build', [
     .pipe $.ngAnnotate()
     .pipe minifier({}, uglify)
     .pipe jsAppFilter.restore()
-    .pipe $.rev()
+    #.pipe $.rev()
     .pipe assets.restore()
     .pipe $.useref()
     .pipe $.revReplace()
@@ -115,7 +115,7 @@ gulp.task 'serve-local', [
       livereload: true
       open: 'http://localhost:8080/src/'
 
-gulp.task 'serve-production', ['build'], ->
+gulp.task 'serve-production', ['generate-web'], ->
   gulp
     .src './'
     .pipe $.webserver
