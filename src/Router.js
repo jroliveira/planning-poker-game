@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 
 import { About, Login } from './components';
 import { Home, Preview } from './containers';
@@ -9,7 +9,7 @@ const Router = props => {
   const withComponent = provider(props.socket);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="panel">
         <Route exact path='/' component={withComponent(Home)} />
         <Route path='/cards/:card' component={withComponent(Preview)} />
@@ -17,7 +17,7 @@ const Router = props => {
         <Route path='/login' component={withComponent(Login)} />
         <Route path='/settings' component={withComponent(Home)} />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 };
 

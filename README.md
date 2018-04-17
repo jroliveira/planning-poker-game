@@ -3,11 +3,11 @@
 [![Code Climate](https://codeclimate.com/github/planning-poker/planning-poker-game/badges/gpa.svg)](https://codeclimate.com/github/planning-poker/planning-poker-game)
 [![bitHound Overall Score](https://www.bithound.io/github/planning-poker/planning-poker-game/badges/score.svg)](https://www.bithound.io/github/planning-poker/planning-poker-game)
 [![bitHound Code](https://www.bithound.io/github/planning-poker/planning-poker-game/badges/code.svg)](https://www.bithound.io/github/planning-poker/planning-poker-game)
-[![bitHound Dev Dependencies](https://www.bithound.io/github/planning-poker/planning-poker-game/badges/devDependencies.svg)](https://www.bithound.io/github/planning-poker/planning-poker-game/master/dependencies/npm)
+[![bitHound Dependencies](https://www.bithound.io/github/planning-poker/planning-poker-game/badges/dependencies.svg)](https://www.bithound.io/github/planning-poker/planning-poker-game/master/dependencies/npm)
 
 ![Planning Poker (game) - Logo][logo]
 
-Progressive web app de planning poker feita com o [framework ionic](http://ionicframework.com/).
+Planning poker progressive web app.
 
 ### Installing
 
@@ -25,11 +25,7 @@ $ npm start
 ### Build
 
 ``` bash
-# mobile package
-$ npm run pkg
-
-# web package
-$ npm run webpkg
+$ npm run deploy
 ```
 
 ### Contributions
