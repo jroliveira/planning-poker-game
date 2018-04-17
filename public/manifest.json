@@ -1,7 +1,7 @@
 {
   "name": "Planning Poker",
   "short_name": "Planning Poker",
-  "description": "App de planning poker.",
+  "description": "Planning poker progressive web app.",
   "theme_color": "#6FA1B2",
   "background_color": "#6FA1B2",
   "display": "standalone",
