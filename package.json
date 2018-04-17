@@ -2,7 +2,7 @@
   "name": "planning-poker-game",
   "version": "2.0.5",
   "description": "Progressive web app de planning poker",
-  "homepage": "https://github.com/planning-poker/planning-poker-game#readme",
+  "homepage": "http://planning-poker.github.io/planning-poker-game",
   "repository": {
     "type": "git",
     "url": "https://github.com/planning-poker/planning-poker-game.git"
@@ -15,80 +15,30 @@
     "url": "https://github.com/planning-poker/planning-poker-game/issues"
   },
   "readmeFilename": "README.md",
+  "dependencies": {
+    "immutable": "^3.8.2",
+    "material-ui": "^1.0.0-beta.40",
+    "material-ui-icons": "^1.0.0-beta.36",
+    "normalize.css": "^8.0.0",
+    "pubsub-js": "^1.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "socket.io-client": "^2.1.0"
+  },
   "scripts": {
-    "start": "gulp clean && gulp serve-local",
-    "test": "gulp test",
-    "prod": "gulp clean && gulp serve-production",
-    "pkg": "gulp clean && gulp generate-package",
-    "webpkg": "gulp clean && gulp generate-web",
-    "build": "gulp clean && gulp build",
-    "config": "gulp wiredep",
-    "postinstall": "bower install && ionic state restore"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
-  "dependencies": {},
   "devDependencies": {
-    "bower": "^1.7.9",
-    "coffee-script": "1.10.0",
-    "cordova": "^6.3.1",
-    "del": "1.2.0",
-    "gulp": "3.9.0",
-    "gulp-angular-templatecache": "1.7.0",
-    "gulp-csso": "1.0.0",
-    "gulp-filter": "2.0.2",
-    "gulp-flatten": "0.3.1",
-    "gulp-htmlmin": "1.3.0",
-    "gulp-if": "1.2.5",
-    "gulp-imagemin": "2.3.0",
-    "gulp-inject": "1.5.0",
-    "gulp-jscs": "1.6.0",
-    "gulp-jscs-stylish": "1.1.0",
-    "gulp-jshint": "1.11.2",
-    "gulp-less": "3.1.0",
-    "gulp-load-plugins": "0.10.0",
-    "gulp-ng-annotate": "1.0.0",
-    "gulp-ng-config": "1.3.1",
-    "gulp-plumber": "1.0.1",
-    "gulp-print": "1.1.0",
-    "gulp-replace-path": "0.4.0",
-    "gulp-rev": "5.1.0",
-    "gulp-rev-replace": "0.4.2",
-    "gulp-shell": "0.5.2",
-    "gulp-task-listing": "1.0.1",
-    "gulp-uglify": "1.5.4",
-    "gulp-useref": "1.2.0",
-    "gulp-util": "3.0.6",
-    "gulp-webserver": "0.9.1",
-    "ionic": "^2.1.0",
-    "jscs": "3.0.3",
-    "jshint": "2.9.2",
-    "jshint-stylish": "2.2.0",
-    "karma": "0.12.31",
-    "karma-chrome-launcher": "2.0.0",
-    "karma-coffee-preprocessor": "1.0.0",
-    "karma-coverage": "0.3.1",
-    "karma-mocha": "0.1.10",
-    "karma-nyan-reporter": "0.0.60",
-    "karma-phantomjs-launcher": "1.0.1",
-    "karma-sinon-chai": "0.3.0",
-    "mocha": "2.2.4",
-    "sinon": "1.14.1",
-    "uglify-js-harmony": "2.6.2",
-    "wiredep": "4.0.0",
-    "yargs": "4.7.1"
-  },
-  "cordovaPlugins": [
-    "cordova-plugin-shake",
-    "cordova-plugin-device-motion",
-    "cordova-plugin-whitelist",
-    "cordova-plugin-insomnia",
-    "cordova-plugin-vibration",
-    "cordova-plugin-inappbrowser"
-  ],
-  "cordovaPlatforms": [
-    {
-      "platform": "android",
-      "version": "",
-      "locator": "android"
-    }
-  ]
+    "gh-pages": "^1.1.0"
+  }
 }

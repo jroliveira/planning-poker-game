@@ -1,0 +1,36 @@
+.players__player {
+  float: right;
+  clear: both;
+  height: 60px;
+  width: 19%;
+  cursor: pointer;
+  background: #CCC5B3;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+  border: solid 1px transparent;
+  border-radius: 6px;
+  margin: 5px 3% 5px 3%;
+}
+
+.players__player--points-different {
+  border-color: #ef473a;
+}
+
+.players__player--points-equal {
+  border-color: #33cd5f;
+}
+
+.players__player-content {
+  position: relative;
+  font-size: 31pt;
+  color: #0C0B13;
+  text-align: center;
+}
+
+.players__player-mark {
+  font-size: 17pt;
+  color: #ffffff;
+  position: relative;
+  font-weight: bold;
+  margin: 0 0 0 5px;
+  height: 15px;
+}

@@ -1,0 +1,12 @@
+.cards {
+  padding: 5px 0 0 0;
+  width: 100%;
+}
+
+.cards__card {
+  margin: 5px 3% 5px 3%;
+  display: inline-block;
+  height: 90px;
+  width: 19%;
+  font-size: 31pt;
+}

@@ -1,7 +1,0 @@
-{
-  "appConfig": {
-    "api": {
-      "url": "https://planning-poker-api.herokuapp.com"
-    }
-  }
-}
