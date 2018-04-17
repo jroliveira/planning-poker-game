@@ -1,0 +1,65 @@
+.about-list {
+  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  color: #444;
+  margin-top: 56px;
+  text-align: center;
+  border: none;
+  font-size: 14px;
+  min-height: 48px;
+}
+
+.about-list__item {
+  text-align: center;
+  border: none;
+  font-size: 14px;
+  min-height: 48px;
+  padding: 16px;
+}
+
+.about__logo-image {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 3px;
+  border-radius: 50%;
+  box-sizing: content-box;
+  margin: 0 auto;
+  width: 96px;
+  height: 96px;
+}
+
+.about__product-name {
+  padding-top: 20px;
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.about__product-version {
+  margin: 0 0 2px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.about__product-version p {
+  margin: 0 0 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+.about__form-button,
+.about__form-button:hover,
+.about__form-button:focus {
+  text-decoration: none;
+  color: #444;
+}
+
+.about__form-icon {
+  font-size: 22pt;
+}
+
+.about__footer {
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  position: absolute;
+  text-align: center;
+}

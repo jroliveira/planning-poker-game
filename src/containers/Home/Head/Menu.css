@@ -1,0 +1,28 @@
+.menu__header {
+  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  font-size: 14px;
+  background-color: #78909c;
+  min-height: 150px;
+  color: #fff;
+  position: relative;
+}
+
+.menu__logo-image {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 1px;
+  border-radius: 50%;
+  box-sizing: content-box;
+  top: 16px;
+  left: 16px;
+  height: 65px;
+  width: 65px;
+  position: absolute;
+  background-color: #fff;
+}
+
+.menu__title {
+  bottom: 16px;
+  left: 16px;
+  position: absolute;
+  font-size: 1.3em
+}

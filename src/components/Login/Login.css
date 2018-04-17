@@ -1,0 +1,15 @@
+form {
+  margin-top: 62px;
+  padding: 20px;
+}
+
+form > div {
+  margin-bottom: 30px !important;
+  width: 100%;
+}
+
+.login-button {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}

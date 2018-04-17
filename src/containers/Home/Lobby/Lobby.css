@@ -1,0 +1,31 @@
+.lobby {
+  font-family: 'Josefin-Sans';
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  bottom: 20px;
+  right: 80px;
+}
+
+.lobby__player {
+  position: relative;
+  float: right;
+  height: 40px;
+  width: 19%;
+  margin: 5px 3% 5px 3%;
+  background: #CCC5B3;
+  border: solid 1px #696969;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+
+.lobby__player-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lobby__player-name {
+  font-size: 25pt;
+}
