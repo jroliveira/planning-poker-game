@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import { Cloud } from 'material-ui-icons';
 
 import { Cards, Fab, Message } from '../../components';
-import Head from './Head';
+import { Head } from './Head';
 import Lobby from './Lobby';
 import './Home.css';
 
@@ -17,7 +17,7 @@ const Home = props => (
       <Lobby me={props.me} players={props.players} />
       <Cards cards={props.cards} />
 
-      <Link to="/login">
+      <Link to="/login" title="Login">
         <Fab
           config={{color:'inherit'}}
           icon={<Cloud />}

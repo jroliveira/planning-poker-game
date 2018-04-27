@@ -10,7 +10,7 @@ const Cards = props => (
     {
       props.cards.map(card =>
         <li className="cards__card" key={card}>
-          <Link to={`/cards/${constants.urlEscape[card] || card}`}>
+          <Link to={`/cards/${constants.urlEscape[card] || card}`} title={`Card ${card}`}>
             <Card card={card} />
           </Link>
         </li>
