@@ -15,7 +15,7 @@ const About = props => (
     <main className="about-list">
       <div className="about-list__item">
         <div className="about__logo-image">
-          <img src={"/img/logo.png"} width="96" height="96" alt="Logo" />
+          <img src="img/logo.png" width="96" height="96" alt="Logo" />
         </div>
 
         <div className="about__product-name">

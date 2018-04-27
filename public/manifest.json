@@ -1,6 +1,6 @@
 {
   "name": "Planning Poker",
-  "short_name": "Planning Poker",
+  "short_name": "P. Poker",
   "description": "Planning poker progressive web app.",
   "theme_color": "#6FA1B2",
   "background_color": "#6FA1B2",
@@ -8,8 +8,8 @@
   "start_url": "./index.html",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "./favicon.ico",
+      "sizes": "512x512 192x192 64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
   ]

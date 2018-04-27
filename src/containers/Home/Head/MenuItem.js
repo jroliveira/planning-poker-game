@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 
 const MenuItem = props => (
-  <Link to={props.to}>
+  <Link to={props.to} title={props.label}>
     <ListItem button>
       <ListItemIcon>
         {props.children}
