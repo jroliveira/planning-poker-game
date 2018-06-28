@@ -1,20 +1,21 @@
 {
   "name": "planning-poker-game",
   "version": "3.0.0",
-  "description": "Planning poker progressive web app",
+  "description": "A Planning Poker (game) powered by React and Redux.",
   "homepage": "https://planning-poker.github.io/planning-poker-game",
   "repository": {
     "type": "git",
     "url": "https://github.com/planning-poker/planning-poker-game.git"
   },
   "keywords": [
-    "react",
     "planning-poker",
+    "react",
     "redux",
     "pwa",
     "socketio",
     "babel",
-    "es6"
+    "es6",
+    "localforage"
   ],
   "author": {
     "name": "Planning Poker",
@@ -37,11 +38,14 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@manaflair/redux-batch": "^0.1.0",
+    "@material-ui/core": "^1.2.0",
+    "@material-ui/icons": "^1.1.0",
+    "axios": "^0.18.0",
     "immutable": "^3.8.2",
-    "material-ui": "^1.0.0-beta.40",
-    "material-ui-icons": "^1.0.0-beta.36",
+    "localforage": "^1.7.1",
     "normalize.css": "^8.0.0",
-    "pubsub-js": "^1.6.0",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
@@ -52,6 +56,16 @@
     "socket.io-client": "^2.1.0"
   },
   "devDependencies": {
-    "gh-pages": "^1.1.0"
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-css-modules": "^2.7.5",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsdoc": "^3.7.1",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
+    "gh-pages": "^1.1.0",
+    "redux-immutable-state-invariant": "^2.1.0"
   }
 }

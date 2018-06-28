@@ -1,1 +1,5 @@
-export { default as send } from './send';
+import send from './send';
+
+export default {
+  send,
+};

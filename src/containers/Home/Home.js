@@ -1,34 +1,56 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
+import { Cloud } from '@material-ui/icons';
 
-import { Cloud } from 'material-ui-icons';
-
-import { Cards, Fab, Message } from '../../components';
-import { Head } from './Head';
+import { Fab, Message } from '../../shared/components';
+import Cards from './Cards';
+import Head from './Head';
 import Lobby from './Lobby';
 import './Home.css';
 
-const Home = props => (
-  <div>
-    <Head />
-    <main className="home">
-      <Message message={props.message} />
-      <Lobby me={props.me} players={props.players} />
-      <Cards cards={props.cards} />
+export default class Home extends React.Component {
+  static propTypes = {
+    cards: PropTypes.object.isRequired,
+    getDecks: PropTypes.func.isRequired,
+    me: PropTypes.object.isRequired,
+    message: PropTypes.object.isRequired,
+    players: PropTypes.object.isRequired,
+    socket: PropTypes.object.isRequired,
+  };
 
-      <Link to="/login" title="Login">
-        <Fab
-          config={{color:'inherit'}}
-          icon={<Cloud />}
-          style={classnames(
-            {'login-button--logged-out': props.me.id === ''},
-            {'login-button--logged-in': props.me.id !== ''},
-          )}
-        />
-      </Link>
-    </main>
-  </div>
-);
+  componentDidMount() {
+    this.props.getDecks();
+  }
 
-export default Home;
+  render() {
+    const { cards, me, message, players, socket } = this.props;
+
+    return (
+      <div>
+        <Head />
+        <main className="home">
+          <Message message={ message } />
+          <Lobby me={ me } players={ players } />
+          <Cards cards={ cards } />
+
+          <Fab
+            badge={ 2 }
+            color="inherit"
+            component={ Link }
+            title="Login"
+            to="/login"
+            disabled={ !socket.connected }
+            style={ classnames(
+              { 'login-button--logged-out': me.id === '' && socket.connected },
+              { 'login-button--logged-in': me.id !== '' && socket.connected },
+              { 'login-button--disconnected': !socket.connected }
+            ) }>
+            <Cloud />
+          </Fab>
+        </main>
+      </div>
+    );
+  }
+}

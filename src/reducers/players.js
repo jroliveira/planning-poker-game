@@ -1,11 +1,10 @@
-import { List } from 'immutable';
+import initialState from './initial-state';
+import types from '../actions/action-types';
 
-import { constants } from '../shared';
-
-export default (state = new List(), action) => {
+export default (state = initialState.players, action) => {
   switch (action.type) {
-    case constants.actions.players:
-      return new List(action.players);
+    case types.PLAYERS:
+      return action.players;
     default:
       return state;
   }

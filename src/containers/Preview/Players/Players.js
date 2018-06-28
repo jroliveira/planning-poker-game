@@ -1,20 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Player from './Player';
 import './Players.css';
 
-const Players = props => (
+const Players = ({ me, players }) => (
   <ul className="players">
     {
-      props.players
-        .filter(player => player.id !== props.me.id)
-        .map(player =>
-          <li key={player.id}>
-            <Player me={props.me} player={player} />
-          </li>
-        )
+      players.map((player) => (
+        <li key={ player.id }>
+          <Player me={ me } player={ player } />
+        </li>
+      ))
     }
   </ul>
 );
+
+Players.propTypes = {
+  me: PropTypes.object.isRequired,
+  players: PropTypes.object.isRequired,
+};
 
 export default Players;

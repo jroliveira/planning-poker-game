@@ -1,9 +1,9 @@
-form {
+.login-form {
   margin-top: 62px;
   padding: 20px;
 }
 
-form > div {
+.login-form > div {
   margin-bottom: 30px !important;
   width: 100%;
 }

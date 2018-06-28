@@ -1,28 +1,35 @@
 # Planning Poker (game)
 
-[![Code Climate](https://codeclimate.com/github/planning-poker/planning-poker-game/badges/gpa.svg)](https://codeclimate.com/github/planning-poker/planning-poker-game)
-[![bitHound Overall Score](https://www.bithound.io/github/planning-poker/planning-poker-game/badges/score.svg)](https://www.bithound.io/github/planning-poker/planning-poker-game)
-[![bitHound Code](https://www.bithound.io/github/planning-poker/planning-poker-game/badges/code.svg)](https://www.bithound.io/github/planning-poker/planning-poker-game)
-[![bitHound Dependencies](https://www.bithound.io/github/planning-poker/planning-poker-game/badges/dependencies.svg)](https://www.bithound.io/github/planning-poker/planning-poker-game/master/dependencies/npm)
+[![Maintainability](https://api.codeclimate.com/v1/badges/41c9b45427fb431a6daf/maintainability)](https://codeclimate.com/github/planning-poker/planning-poker-game/maintainability)
 
 ![Planning Poker (game) - Logo][logo]
 
-Planning poker progressive web app.
+A *Planning Poker* game powered by React, Redux, Koa and Socket.IO.
+
+### Pre requirements
+
+* [Node.js](https://nodejs.org/en/)
 
 ### Installing
 
 ``` bash
 $ git clone https://github.com/planning-poker/planning-poker-game.git
-$ npm install
+$ npm i
 ```
 
-### How to use it
+### How to run it
 
 ``` bash
 $ npm start
 ```
 
-### Build
+### How to build it
+
+``` bash
+$ npm run build
+```
+
+### How to deploy it
 
 ``` bash
 $ npm run deploy
@@ -35,5 +42,9 @@ $ npm run deploy
 3. git add --all && git commit -m "feature description"
 4. git push origin <branch-name>
 5. Create a pull request
+
+### License
+
+The code is available under the [MIT license](LICENSE).
 
 [logo]: https://raw.githubusercontent.com/planning-poker/planning-poker-game/master/logo.png "Planning Poker (game) - Logo"

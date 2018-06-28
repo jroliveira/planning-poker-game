@@ -1,8 +1,9 @@
-import { constants } from '../shared';
+import initialState from './initial-state';
+import types from '../actions/action-types';
 
-export default (state = constants.defaults.me, action) => {
+export default (state = initialState.me, action) => {
   switch (action.type) {
-    case constants.actions.me:
+    case types.ME:
       return action.me;
     default:
       return state;

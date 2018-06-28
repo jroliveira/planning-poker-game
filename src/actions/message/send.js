@@ -1,9 +1,7 @@
-import { constants } from '../../shared';
+import { initialState } from '../../reducers';
+import types from '../action-types';
 
-export default (text = '', type = '') => ({
-  type: constants.actions.message,
-  message: {
-    text,
-    type,
-  },
-})
+export default (message = initialState.message) => ({
+  type: types.MESSAGE,
+  message,
+});
