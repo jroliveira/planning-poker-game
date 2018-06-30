@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "extends": [
+      "./eslint-config/es8.js",
+      "./eslint-config/addons/node.js",
+      "./eslint-config/addons/browser.js",
+      "./eslint-config/addons/babel-parser.js",
+      "./eslint-config/addons/es6-modules.js",
+      "./eslint-config/addons/react.js",
+      "./eslint-config/addons/object-spread.js",
+      "./eslint-config/addons/css-modules.js"
+  ]
+}

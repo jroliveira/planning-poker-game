@@ -1,8 +1,8 @@
 import React from 'react';
+import { Menu as MenuIcon } from '@material-ui/icons';
 
-import MenuIcon from 'material-ui-icons/Menu';
-
-import { Title } from '../../../components';
+import { Title } from '../../../shared/components';
+import { app } from '../../../shared/constants';
 import Menu from './Menu';
 
 export default class Head extends React.Component {
@@ -10,26 +10,22 @@ export default class Head extends React.Component {
     open: false,
   };
 
-  handleClick = () => {
-    this.setState({
-      open: !this.state.open,
-    });
-  };
-
   render() {
     return (
       <div>
         <Title
-          label="Planning Poker"
-          icon={<MenuIcon/>}
-          onClick={this.handleClick}
-        />
+          label={ app.name }
+          icon={ <MenuIcon /> }
+          onClick={ this.handleClick } />
 
         <Menu
-          onClose={this.handleClick}
-          open={this.state.open}
-        />
+          onClose={ this.handleClick }
+          open={ this.state.open } />
       </div>
     );
   }
+
+  handleClick = () => {
+    this.setState({ open: !this.state.open });
+  };
 }

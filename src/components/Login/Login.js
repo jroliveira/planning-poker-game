@@ -1,64 +1,84 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { ChevronLeft, Send } from '@material-ui/icons';
 
-import { ArrowBack, Send } from 'material-ui-icons';
-
-import { Fab, TextBox, Title } from '../../components';
+import api from '../../shared/api';
+import { Fab, TextBox, Title } from '../../shared/components';
 import './Login.css';
 
 export default class Login extends React.Component {
-  room = {
-    value: '',
-  };
-  name = {
-    value: '',
+  static propTypes = {
+    history: PropTypes.object.isRequired,
+    socket: PropTypes.object.isRequired,
   };
 
-  handlerClick = () => {
-    this.props.history.push('/');
-  };
+  constructor() {
+    super();
+    api.configs.getByName('online').then((data) => {
+      if (data) {
+        const { config: { name, room } } = data;
 
-  handlerSubmit = event => {
-    event.preventDefault();
-
-    this.props.socket.emit('join', {
-      name: this.name.value,
-      room: this.room.value,
+        this.setState({ name, room });
+      }
     });
+  }
 
-    this.handlerClick();
+  state = {
+    room: '',
+    name: '',
   };
 
   render() {
+    const { name, room } = this.state;
+
     return (
       <div>
         <Title
           label="Login"
-          icon={<ArrowBack />}
-          onClick={this.handlerClick}
-        />
-        <form autoComplete="off" onSubmit={this.handlerSubmit}>
+          icon={ <ChevronLeft /> }
+          onClick={ this.handleBack } />
+        <form className="login-form" autoComplete="off" onSubmit={ this.handleSubmit }>
           <TextBox
-            id="room"
+            name="room"
             label="Room"
-            inputRef={value => this.room = value}
+            value={ room }
+            onChange={ this.handleInputChange }
             required />
 
           <TextBox
-            id="name"
+            name="name"
             label="Name"
-            inputRef={value => this.name = value}
+            value={ name }
+            onChange={ this.handleInputChange }
             required />
 
           <Fab
-            config={{type:'submit', color:'primary'}}
-            icon={<Send />}
-            style={classnames('login-button')}
-          />
+            type="submit"
+            color="primary"
+            style={ classnames('login-button') }>
+            <Send />
+          </Fab>
         </form>
       </div>
     );
   }
+
+  handleInputChange = (event) => {
+    const { name, value } = event.target;
+
+    this.setState({ [name]: value });
+  };
+
+  handleBack = () => {
+    this.props.history.push('/');
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const { name, room } = this.state;
+
+    this.props.socket.emit('join', { name, room });
+    this.handleBack();
+  };
 }
-
-

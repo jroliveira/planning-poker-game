@@ -1,0 +1,17 @@
+.settings-form > div {
+  margin-bottom: 30px !important;
+  width: 100%;
+}
+
+.settings-list {
+  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  color: #444;
+  margin-top: 56px;
+  text-align: center;
+  border: none;
+  font-size: 14px;
+  min-height: 48px;
+  max-width: 360px;
+  text-align: left;
+  background-color: #424242;
+}

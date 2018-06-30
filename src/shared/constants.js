@@ -1,16 +1,25 @@
-export const cards = {
-  fibonacci: ['0', '1', '2', '3', '5', '8', '13', '20', '40', '&infin;', '&quest;', '&#9749;'],
-};
+import config from '../../package.json';
 
-export const urlEscape = {
-  '&#9749;': '%E2%98%95',
-};
+export const app = {
+  name: 'Planning Poker',
+  description: config.description,
+  version: config.version,
 
-export const actions = {
-  cards: 'CARDS',
-  me: 'ME',
-  message: 'MESSAGE',
-  players: 'PLAYERS',
+  api: {
+    url: 'https://planning-poker-api.herokuapp.com',
+  },
+
+  db: {
+    name: 'planning-poker',
+    version: 1.0,
+    description: 'planning poker store',
+  },
+
+  defaults: {
+    deck: 'fibonacci',
+  },
+
+  debug: true,
 };
 
 export const message = {
@@ -21,19 +30,12 @@ export const message = {
   },
 };
 
-export const defaults = {
-  me: {
-    id: '',
-    card: '',
-  },
-  message: {
-    text: 'connecting...',
-    type: message.types.warning,
-  },
+export const urlEscape = {
+  '&#9749;': '%E2%98%95',
 };
 
-export const app = {
-  api: {
-    url: 'https://planning-poker-api.herokuapp.com',
-  },
+export default {
+  app,
+  message,
+  urlEscape,
 };

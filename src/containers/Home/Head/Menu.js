@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Drawer, Hidden, List } from 'material-ui';
-import { withStyles } from 'material-ui/styles';
-import { InfoOutline, SettingsApplications } from 'material-ui-icons';
+import { Drawer, Hidden, IconButton, List } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
+import { ChevronLeft, InfoOutline, SettingsApplications } from '@material-ui/icons';
 
+import { app } from '../../../shared/constants';
 import MenuItem from './MenuItem';
 import './Menu.css';
 
@@ -13,14 +15,28 @@ const styles = () => ({
   },
 });
 
-const Menu = withStyles(styles)(props => (
+const Menu = (props) => (
   <Hidden mdUp>
-    <Drawer {...props}>
+    <Drawer
+      { ...props }
+      variant="persistent"
+      ModalProps={ { keepMounted: true } }>
       <div className="menu__header">
-        <img className="menu__logo-image" src="img/logo.png" height="65" width="65" alt="Logo" />
+        <div className="menu__button-back">
+          <IconButton onClick={ props.onClose }>
+            { <ChevronLeft /> }
+          </IconButton>
+        </div>
+
+        <img
+          className="menu__logo-image"
+          src="img/logo.png"
+          height="65"
+          width="65"
+          alt="Logo" />
 
         <div className="menu__title">
-          Planning Poker
+          { app.name }
         </div>
       </div>
 
@@ -34,6 +50,10 @@ const Menu = withStyles(styles)(props => (
       </List>
     </Drawer>
   </Hidden>
-));
+);
 
-export default Menu;
+Menu.propTypes = {
+  onClose: PropTypes.func.isRequired,
+};
+
+export default withStyles(styles)(Menu);

@@ -50,6 +50,8 @@
 .about__form-button:focus {
   text-decoration: none;
   color: #444;
+  border: none;
+  background: transparent;
 }
 
 .about__form-icon {
