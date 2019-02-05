@@ -34,7 +34,6 @@ export default (store) => {
 
   socket.on(events.user.joined, (data) => store.dispatch(players.update(data)));
   socket.on(events.user.left, (data) => store.dispatch(players.update(data)));
-  socket.on(events.card.chosen, (data) => store.dispatch(players.update(data)));
   socket.on(events.card.revealed, (data) => store.dispatch(players.update(data)));
   socket.on(events.card.cleared, (data) => store.dispatch(players.update(data)));
 
