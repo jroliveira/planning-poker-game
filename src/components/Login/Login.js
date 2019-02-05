@@ -51,6 +51,9 @@ export default class Login extends React.Component {
             label="Name"
             value={ name }
             onChange={ this.handleInputChange }
+            inputProps={ {
+              maxLength: '2',
+            } }
             required />
 
           <Fab
@@ -67,7 +70,7 @@ export default class Login extends React.Component {
   handleInputChange = (event) => {
     const { name, value } = event.target;
 
-    this.setState({ [name]: value });
+    this.setState({ [name]: value.toLowerCase() });
   };
 
   handleBack = () => {
