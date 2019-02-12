@@ -1,2 +1,5 @@
-export { default as withSocket } from './provider';
-export { default as setup } from './setup';
+import setup from './setup';
+
+export default {
+  setup,
+};

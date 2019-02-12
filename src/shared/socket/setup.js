@@ -1,7 +1,7 @@
 import openSocket from 'socket.io-client';
 
-import { constants } from '..';
-import { me, message, players } from '../../actions';
+import shared from '..';
+import actions from '../../actions';
 
 const events = {
   joined: 'joined',
@@ -21,21 +21,19 @@ const events = {
 };
 
 export default (store) => {
-  store.dispatch(message.send({ text: 'connecting...', type: constants.message.types.warning }));
+  store.dispatch(actions.message.send({ text: 'connecting...', type: shared.constants.message.types.warning }));
 
-  const socket = openSocket(constants.app.api.url);
+  const { config: { protocol, host, port } } = store.getState().configs.api;
+  const socket = openSocket(`${protocol}://${host}:${port}`);
 
-  socket.on(events.connect, () => store.dispatch(me.connect(socket, store.getState().me)));
-  socket.on(events.reconnecting, () => store.dispatch(me.reconnect()));
-  socket.on(events.reconnectFailed, () => store.dispatch(me.disconnect()));
+  socket.on(events.connect, () => store.dispatch(actions.me.connect(socket, store.getState().me)));
+  socket.on(events.reconnecting, () => store.dispatch(actions.me.reconnect()));
+  socket.on(events.reconnectFailed, () => store.dispatch(actions.me.disconnect()));
 
-  socket.on(events.joined, (data) => store.dispatch(me.update(data)));
-  socket.on(events.chosen, (data) => store.dispatch(me.update(data)));
+  socket.on(events.joined, (data) => store.dispatch(actions.me.update(data)));
 
-  socket.on(events.user.joined, (data) => store.dispatch(players.update(data)));
-  socket.on(events.user.left, (data) => store.dispatch(players.update(data)));
-  socket.on(events.card.revealed, (data) => store.dispatch(players.update(data)));
-  socket.on(events.card.cleared, (data) => store.dispatch(players.update(data)));
-
-  return socket;
+  socket.on(events.user.joined, (data) => store.dispatch(actions.players.update(data)));
+  socket.on(events.user.left, (data) => store.dispatch(actions.players.update(data)));
+  socket.on(events.card.revealed, (data) => store.dispatch(actions.players.update(data)));
+  socket.on(events.card.cleared, (data) => store.dispatch(actions.players.update(data)));
 };

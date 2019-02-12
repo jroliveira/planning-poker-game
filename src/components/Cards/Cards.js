@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { constants } from '../../../shared';
-import { Card } from '../../shared/components';
+import shared from '../../shared';
+import { Card } from '..';
 import './Cards.css';
 
 const Cards = ({ cards }) => (
@@ -11,7 +11,7 @@ const Cards = ({ cards }) => (
     {
       cards.map((card) => (
         <li className="cards__card" key={ card }>
-          <Link to={ `/cards/${constants.urlEscape[card] || card}` } title={ `Card ${card}` }>
+          <Link to={ `/cards/${shared.constants.urlEscape[card] || card}` } title={ `Card ${card}` }>
             <Card card={ card } />
           </Link>
         </li>

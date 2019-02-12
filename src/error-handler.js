@@ -1,9 +1,9 @@
 import localforage from 'localforage';
 
-import { api, constants } from './shared';
+import shared from './shared';
 
 const errorStore = localforage.createInstance({
-  ...constants.app.db,
+  ...shared.constants.app.db,
   storeName: 'error',
 });
 
@@ -21,7 +21,7 @@ export default async (message, source, lineno, colno, error) => {
   };
 
   await errorStore.setItem(key, log);
-  await api.errors.create(log);
+  await shared.api.errors.create(log);
 
-  return !constants.debug;
+  return !process.env.REACT_APP_DEBUG;
 };

@@ -1,9 +1,8 @@
-.settings-form > div {
-  margin-bottom: 30px !important;
+.stories-form > div {
   width: 100%;
 }
 
-.settings-list {
+.stories-list {
   font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
   margin-top: 56px;
   text-align: center;

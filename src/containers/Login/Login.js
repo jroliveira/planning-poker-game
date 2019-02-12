@@ -3,33 +3,26 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { ChevronLeft, Send } from '@material-ui/icons';
 
-import api from '../../shared/api';
-import { Fab, TextBox, Title } from '../../shared/components';
+import { Fab, TextBox, Title } from '../../components';
 import './Login.css';
 
 export default class Login extends React.Component {
   static propTypes = {
     history: PropTypes.object.isRequired,
     socket: PropTypes.object.isRequired,
+    online: PropTypes.object.isRequired,
   };
 
-  constructor() {
+  constructor({ online }) {
     super();
-    api.configs.getByName('online').then((data) => {
-      if (data) {
-        const { config: { name, room } } = data;
 
-        this.setState({ name, room });
-      }
-    });
+    this.state = {
+      name: online.name,
+      room: online.room,
+    };
   }
 
-  state = {
-    room: '',
-    name: '',
-  };
-
-  render() {
+  render = () => {
     const { name, room } = this.state;
 
     return (
@@ -65,7 +58,7 @@ export default class Login extends React.Component {
         </form>
       </div>
     );
-  }
+  };
 
   handleInputChange = (event) => {
     const { name, value } = event.target;

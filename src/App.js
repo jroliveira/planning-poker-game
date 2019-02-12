@@ -8,7 +8,7 @@ import 'normalize.css';
 
 const theme = createMuiTheme({
   palette: {
-    type: 'dark',
+    type: 'light',
     primary: {
       light: blueGrey[200],
       main: blueGrey[400],

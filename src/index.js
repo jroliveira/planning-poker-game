@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import { setup } from './shared/socket';
+import actions from './actions';
+import shared from './shared';
 import App from './App';
 import errorHandler from './error-handler';
 import registerServiceWorker from './registerServiceWorker';
@@ -10,12 +11,25 @@ import configureStore from './store';
 
 window.onerror = errorHandler;
 const store = configureStore();
-const socket = setup(store);
+
+init();
 
 ReactDOM.render(
   <Provider store={ store }>
-    <App socket={ socket } />
+    <App />
   </Provider>,
   document.getElementById('root')
 );
 registerServiceWorker();
+
+async function init() {
+  const decks = await shared.api.decks.getAll();
+  const api = await shared.api.configs.getByName('api');
+  const stories = await shared.api.configs.getByName('stories');
+  const online = await shared.api.configs.getByName('online');
+
+  store.dispatch(actions.decks.update(decks));
+  store.dispatch(actions.configs.update({ api, stories, online }));
+
+  shared.socket.setup(store);
+}

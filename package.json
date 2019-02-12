@@ -1,6 +1,6 @@
 {
   "name": "planning-poker-game",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "A Planning Poker (game) powered by React and Redux.",
   "homepage": "https://jroliveira.net/planning-poker-game",
   "repository": {
@@ -18,7 +18,7 @@
     "localforage"
   ],
   "author": {
-    "name": "Planning Poker",
+    "name": "Junior Oliveira",
     "url": "http://jroliveira.net"
   },
   "license": "MIT",
@@ -38,34 +38,35 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@manaflair/redux-batch": "^0.1.0",
-    "@material-ui/core": "^1.2.0",
-    "@material-ui/icons": "^1.1.0",
+    "@manaflair/redux-batch": "^1.0.0",
+    "@material-ui/core": "^3.9.2",
+    "@material-ui/icons": "^3.0.2",
     "axios": "^0.18.0",
-    "immutable": "^3.8.2",
+    "immutable": "^4.0.0-rc.12",
+    "jira-client": "^6.4.1",
     "localforage": "^1.7.1",
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-redux": "^5.0.7",
+    "react-redux": "^6.0.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.1",
-    "redux": "^3.7.2",
+    "react-scripts": "2.1.5",
+    "redux": "^4.0.1",
     "redux-thunk": "^2.2.0",
     "socket.io-client": "^2.1.0"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-css-modules": "^2.7.5",
     "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jsdoc": "^3.7.1",
+    "eslint-plugin-jsdoc": "^4.1.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
-    "gh-pages": "^1.1.0",
+    "gh-pages": "^2.0.1",
     "redux-immutable-state-invariant": "^2.1.0"
   }
 }

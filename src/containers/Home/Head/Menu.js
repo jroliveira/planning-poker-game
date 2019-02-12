@@ -5,7 +5,6 @@ import { Drawer, Hidden, IconButton, List } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { ChevronLeft, InfoOutline, SettingsApplications } from '@material-ui/icons';
 
-import { app } from '../../../shared/constants';
 import MenuItem from './MenuItem';
 import './Menu.css';
 
@@ -19,6 +18,7 @@ const Menu = (props) => (
   <Hidden mdUp>
     <Drawer
       { ...props }
+      className="menu"
       variant="persistent"
       ModalProps={ { keepMounted: true } }>
       <div className="menu__header">
@@ -36,7 +36,7 @@ const Menu = (props) => (
           alt="Logo" />
 
         <div className="menu__title">
-          { app.name }
+          { process.env.REACT_APP_NAME }
         </div>
       </div>
 
