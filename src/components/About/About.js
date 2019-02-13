@@ -60,6 +60,6 @@ export default class About extends React.Component {
 
   handleChoose = (event) => {
     event.preventDefault();
-    window.open('https://github.com/planning-poker/planning-poker-game', '_system', 'location=yes');
+    window.open('https://github.com/jroliveira/planning-poker-game', '_system', 'location=yes');
   };
 }

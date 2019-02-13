@@ -2,10 +2,10 @@
   "name": "planning-poker-game",
   "version": "3.0.0",
   "description": "A Planning Poker (game) powered by React and Redux.",
-  "homepage": "https://planning-poker.github.io/planning-poker-game",
+  "homepage": "https://jroliveira.net/planning-poker-game",
   "repository": {
     "type": "git",
-    "url": "https://github.com/planning-poker/planning-poker-game.git"
+    "url": "https://github.com/jroliveira/planning-poker-game.git"
   },
   "keywords": [
     "planning-poker",
@@ -19,11 +19,11 @@
   ],
   "author": {
     "name": "Planning Poker",
-    "url": "http://planning-poker.github.io"
+    "url": "http://jroliveira.net"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/planning-poker/planning-poker-game/issues"
+    "url": "https://github.com/jroliveira/planning-poker-game/issues"
   },
   "readmeFilename": "README.md",
   "engines": {

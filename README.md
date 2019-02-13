@@ -1,6 +1,6 @@
 # Planning Poker (game)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/41c9b45427fb431a6daf/maintainability)](https://codeclimate.com/github/planning-poker/planning-poker-game/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/41c9b45427fb431a6daf/maintainability)](https://codeclimate.com/github/jroliveira/planning-poker-game/maintainability)
 
 ![Planning Poker (game) - Logo][logo]
 
@@ -13,7 +13,7 @@ A *Planning Poker* game powered by React, Redux, Koa and Socket.IO.
 ### Installing
 
 ``` bash
-$ git clone https://github.com/planning-poker/planning-poker-game.git
+$ git clone https://github.com/jroliveira/planning-poker-game.git
 $ npm i
 ```
 
@@ -47,4 +47,4 @@ $ npm run deploy
 
 The code is available under the [MIT license](LICENSE).
 
-[logo]: https://raw.githubusercontent.com/planning-poker/planning-poker-game/master/logo.png "Planning Poker (game) - Logo"
+[logo]: https://raw.githubusercontent.com/jroliveira/planning-poker-game/master/logo.png "Planning Poker (game) - Logo"
