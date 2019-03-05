@@ -7,10 +7,14 @@ export default (socket, { name, room }) => {
   }
 
   return [
-    message.send(),
     {
       type: types.SOCKET,
-      socket: {
+      socket,
+    },
+    message.send(),
+    {
+      type: types.INTERNET,
+      internet: {
         connected: true,
       },
     },

@@ -1,15 +1,12 @@
 import { connect } from 'react-redux';
 
-import { cards, decks, players } from '../../selectors';
-import { constants } from '../../shared';
+import selectors from '../../selectors';
 import Home from './Home';
 
 export default connect((state) => ({
-  cards: cards.getByDeck(state.decks, constants.app.defaults.deck),
+  cards: selectors.cards.getByDeck(state.decks, process.env.REACT_APP_DEFAULTS_DECK),
+  internet: state.internet,
   me: state.me,
-  socket: state.socket,
   message: state.message,
-  players: players.getOthers(state.players, state.me.id),
-}), (dispatch) => ({
-  getDecks: decks.getAll(dispatch),
-}))(Home);
+  players: selectors.players.getOthers(state.players, state.me.id),
+}), {})(Home);

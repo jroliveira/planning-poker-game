@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
+import actions from '../../actions';
 import Settings from './Settings';
 
 export default connect((state) => ({
-  decks: state.decks,
-  message: state.message,
-}), {})(Settings);
+  configs: state.configs,
+}), {
+  updateConfigs: actions.configs.update,
+})(Settings);

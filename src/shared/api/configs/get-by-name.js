@@ -1,1 +1,1 @@
-export default (store) => (name) => store.getItem(name);
+export default (store) => async (name) => await store.getItem(name) || undefined;

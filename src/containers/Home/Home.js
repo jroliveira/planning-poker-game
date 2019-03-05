@@ -4,53 +4,42 @@ import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import { Cloud } from '@material-ui/icons';
 
-import { Fab, Message } from '../../shared/components';
-import Cards from './Cards';
+import { Cards, Fab, Lobby, Message } from '../../components';
 import Head from './Head';
-import Lobby from './Lobby';
 import './Home.css';
 
-export default class Home extends React.Component {
-  static propTypes = {
-    cards: PropTypes.object.isRequired,
-    getDecks: PropTypes.func.isRequired,
-    me: PropTypes.object.isRequired,
-    message: PropTypes.object.isRequired,
-    players: PropTypes.object.isRequired,
-    socket: PropTypes.object.isRequired,
-  };
+const Home = ({ cards, me, message, players, internet }) => (
+  <div>
+    <Head />
+    <main className="home">
+      <Message message={ message } />
+      <Lobby me={ me } players={ players } />
+      <Cards cards={ cards } />
 
-  componentDidMount() {
-    this.props.getDecks();
-  }
+      <Fab
+        badge={ 2 }
+        color="inherit"
+        component={ Link }
+        title="Login"
+        to="/login"
+        disabled={ !internet.connected }
+        style={ classnames(
+          { 'login-button--logged-out': me.id === '' && internet.connected },
+          { 'login-button--logged-in': me.id !== '' && internet.connected },
+          { 'login-button--disconnected': !internet.connected }
+        ) }>
+        <Cloud />
+      </Fab>
+    </main>
+  </div>
+);
 
-  render() {
-    const { cards, me, message, players, socket } = this.props;
+Home.propTypes = {
+  cards: PropTypes.object.isRequired,
+  internet: PropTypes.object.isRequired,
+  me: PropTypes.object.isRequired,
+  message: PropTypes.object.isRequired,
+  players: PropTypes.object.isRequired,
+};
 
-    return (
-      <div>
-        <Head />
-        <main className="home">
-          <Message message={ message } />
-          <Lobby me={ me } players={ players } />
-          <Cards cards={ cards } />
-
-          <Fab
-            badge={ 2 }
-            color="inherit"
-            component={ Link }
-            title="Login"
-            to="/login"
-            disabled={ !socket.connected }
-            style={ classnames(
-              { 'login-button--logged-out': me.id === '' && socket.connected },
-              { 'login-button--logged-in': me.id !== '' && socket.connected },
-              { 'login-button--disconnected': !socket.connected }
-            ) }>
-            <Cloud />
-          </Fab>
-        </main>
-      </div>
-    );
-  }
-}
+export default Home;

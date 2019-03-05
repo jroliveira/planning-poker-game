@@ -1,6 +1,3 @@
-import { api } from '../../shared';
-import { decks } from '../../actions';
+import shared from '../../shared';
 
-export default (dispatch) => () => api.decks.getAll().then((data) => {
-  dispatch(decks.update(data));
-});
+export default () => shared.api.decks.getAll();

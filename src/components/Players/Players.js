@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Player from './Player';
+import { Player } from '..';
 import './Players.css';
 
 const Players = ({ me, players }) => (

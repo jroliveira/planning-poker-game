@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import Preview from './Preview';
-import { players } from '../../selectors';
+import selectors from '../../selectors';
 
 export default connect((state) => ({
   me: state.me,
   message: state.message,
-  players: players.getOthers(state.players, state.me.id),
+  players: selectors.players.getOthers(state.players, state.me.id),
+  socket: state.socket,
 }), {})(Preview);
