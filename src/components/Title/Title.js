@@ -9,7 +9,7 @@ const Title = ({ icon, label, onClick }) => (
       <IconButton color="inherit" onClick={ onClick }>
         { icon }
       </IconButton>
-      <Typography variant="title" color="inherit" noWrap>
+      <Typography variant="h6" color="inherit" noWrap>
         { label }
       </Typography>
     </Toolbar>

@@ -15,6 +15,9 @@ const theme = createMuiTheme({
       dark: blueGrey[600],
     },
   },
+  typography: {
+    useNextVariants: true,
+  },
 });
 
 const App = (props) => (

@@ -1,13 +1,18 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 import { reduxBatch } from '@manaflair/redux-batch';
-import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
 
-import reducers from '../reducers';
+import rootReducer from '../reducers';
+import { DevTools } from '../containers';
+
+const enhancer = compose(
+  reduxBatch,
+  applyMiddleware(thunk),
+  DevTools.instrument(),
+);
 
 export default (initialState) => createStore(
-  reducers,
+  rootReducer,
   initialState,
-  reduxBatch,
-  applyMiddleware(thunk, reduxImmutableStateInvariant()),
+  enhancer,
 );

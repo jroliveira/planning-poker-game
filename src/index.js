@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
 import actions from './actions';
@@ -14,12 +14,19 @@ const store = configureStore();
 
 init();
 
-ReactDOM.render(
+render(
   <Provider store={ store }>
     <App />
   </Provider>,
   document.getElementById('root')
 );
+
+if (process.env.NODE_ENV !== 'production') {
+  const showDevTools = require('./showDevTools').default;
+
+  showDevTools(store);
+}
+
 registerServiceWorker();
 
 async function init() {
