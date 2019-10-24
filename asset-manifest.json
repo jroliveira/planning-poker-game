@@ -1,6 +1,15 @@
 {
-  "main.css": "static/css/main.cabf5b24.css",
-  "main.css.map": "static/css/main.cabf5b24.css.map",
-  "main.js": "static/js/main.67fdd383.js",
-  "main.js.map": "static/js/main.67fdd383.js.map"
+  "main.css": "/planning-poker-game/static/css/main.393801a5.chunk.css",
+  "main.js": "/planning-poker-game/static/js/main.84990fc2.chunk.js",
+  "main.js.map": "/planning-poker-game/static/js/main.84990fc2.chunk.js.map",
+  "runtime~main.js": "/planning-poker-game/static/js/runtime~main.94ad056f.js",
+  "runtime~main.js.map": "/planning-poker-game/static/js/runtime~main.94ad056f.js.map",
+  "static/css/2.f3b451d4.chunk.css": "/planning-poker-game/static/css/2.f3b451d4.chunk.css",
+  "static/js/2.a8bc664f.chunk.js": "/planning-poker-game/static/js/2.a8bc664f.chunk.js",
+  "static/js/2.a8bc664f.chunk.js.map": "/planning-poker-game/static/js/2.a8bc664f.chunk.js.map",
+  "index.html": "/planning-poker-game/index.html",
+  "precache-manifest.3d373f9e949ce7fa4bbd459cb53dbcec.js": "/planning-poker-game/precache-manifest.3d373f9e949ce7fa4bbd459cb53dbcec.js",
+  "service-worker.js": "/planning-poker-game/service-worker.js",
+  "static/css/2.f3b451d4.chunk.css.map": "/planning-poker-game/static/css/2.f3b451d4.chunk.css.map",
+  "static/css/main.393801a5.chunk.css.map": "/planning-poker-game/static/css/main.393801a5.chunk.css.map"
 }
