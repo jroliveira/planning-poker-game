@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Button } from '@material-ui/core';
+import { Fab } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = (theme) => ({
@@ -13,19 +13,19 @@ const styles = (theme) => ({
   },
 });
 
-const Fab = ({ classes, children, style, ...config }) => (
-  <Button
+const FabCustom = ({ classes, children, style, ...config }) => (
+  <Fab
     className={ classnames(classes.fab, style) }
-    variant="fab"
+    variant="round"
     { ...config }>
     { children }
-  </Button>
+  </Fab>
 );
 
-Fab.propTypes = {
+FabCustom.propTypes = {
   classes: PropTypes.object.isRequired,
   children: PropTypes.element.isRequired,
   style: PropTypes.string.isRequired,
 };
 
-export default withStyles(styles)(Fab);
+export default withStyles(styles)(FabCustom);

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Drawer, Hidden, IconButton, List } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-import { ChevronLeft, InfoOutline, SettingsApplications } from '@material-ui/icons';
+import { ChevronLeft, InfoOutlined, SettingsApplications } from '@material-ui/icons';
 
 import MenuItem from './MenuItem';
 import './Menu.css';
@@ -42,7 +42,7 @@ const Menu = (props) => (
 
       <List>
         <MenuItem label="About" to="/about">
-          <InfoOutline />
+          <InfoOutlined />
         </MenuItem>
         <MenuItem label="Settings" to="/settings">
           <SettingsApplications />
