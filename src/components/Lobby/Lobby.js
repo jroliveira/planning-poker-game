@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './Lobby.css';
 
-const Players = ({ players }) => (
+const Lobby = ({ players }) => (
   <ul className="lobby">
     {
       players.map((player) => (
@@ -17,9 +17,8 @@ const Players = ({ players }) => (
   </ul>
 );
 
-Players.propTypes = {
-  me: PropTypes.object.isRequired,
+Lobby.propTypes = {
   players: PropTypes.object.isRequired,
 };
 
-export default Players;
+export default Lobby;

@@ -6,6 +6,7 @@ import actions from '../../actions';
 const events = {
   joined: 'joined',
   chosen: 'chosen',
+  revealed: 'revealed',
   user: {
     joined: 'user:joined',
     left: 'user:left',
@@ -31,6 +32,7 @@ export default (store) => {
   socket.on(events.reconnectFailed, () => store.dispatch(actions.me.disconnect()));
 
   socket.on(events.joined, (data) => store.dispatch(actions.me.update(data)));
+  socket.on(events.revealed, (data) => store.dispatch(actions.me.update(data)));
 
   socket.on(events.user.joined, (data) => store.dispatch(actions.players.update(data)));
   socket.on(events.user.left, (data) => store.dispatch(actions.players.update(data)));
