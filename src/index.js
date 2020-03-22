@@ -21,12 +21,6 @@ render(
   document.getElementById('root')
 );
 
-if (process.env.NODE_ENV !== 'production') {
-  const showDevTools = require('./showDevTools').default;
-
-  showDevTools(store);
-}
-
 registerServiceWorker();
 
 async function init() {

@@ -13,7 +13,7 @@ const Home = ({ cards, me, message, players, internet }) => (
     <Head />
     <main className="home">
       <Message message={ message } />
-      <Lobby me={ me } players={ players } />
+      <Lobby players={ players } />
       <Cards cards={ cards } />
 
       <Fab

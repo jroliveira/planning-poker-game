@@ -30,7 +30,7 @@ const Menu = (props) => (
 
         <img
           className="menu__logo-image"
-          src="img/logo.png"
+          src={process.env.PUBLIC_URL + '/img/logo.png'}
           height="65"
           width="65"
           alt="Logo" />

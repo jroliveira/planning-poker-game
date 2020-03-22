@@ -7,8 +7,8 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = (theme) => ({
   fab: {
     position: 'absolute',
-    bottom: theme.spacing.unit * 2,
-    right: theme.spacing.unit * 2,
+    bottom: theme.spacing(1) * 2,
+    right: theme.spacing(1) * 2,
     color: theme.palette.common.white,
   },
 });
