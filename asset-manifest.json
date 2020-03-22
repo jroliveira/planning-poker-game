@@ -1,15 +1,25 @@
 {
-  "main.css": "/planning-poker-game/static/css/main.393801a5.chunk.css",
-  "main.js": "/planning-poker-game/static/js/main.84990fc2.chunk.js",
-  "main.js.map": "/planning-poker-game/static/js/main.84990fc2.chunk.js.map",
-  "runtime~main.js": "/planning-poker-game/static/js/runtime~main.94ad056f.js",
-  "runtime~main.js.map": "/planning-poker-game/static/js/runtime~main.94ad056f.js.map",
-  "static/css/2.f3b451d4.chunk.css": "/planning-poker-game/static/css/2.f3b451d4.chunk.css",
-  "static/js/2.a8bc664f.chunk.js": "/planning-poker-game/static/js/2.a8bc664f.chunk.js",
-  "static/js/2.a8bc664f.chunk.js.map": "/planning-poker-game/static/js/2.a8bc664f.chunk.js.map",
-  "index.html": "/planning-poker-game/index.html",
-  "precache-manifest.3d373f9e949ce7fa4bbd459cb53dbcec.js": "/planning-poker-game/precache-manifest.3d373f9e949ce7fa4bbd459cb53dbcec.js",
-  "service-worker.js": "/planning-poker-game/service-worker.js",
-  "static/css/2.f3b451d4.chunk.css.map": "/planning-poker-game/static/css/2.f3b451d4.chunk.css.map",
-  "static/css/main.393801a5.chunk.css.map": "/planning-poker-game/static/css/main.393801a5.chunk.css.map"
+  "files": {
+    "main.css": "/planning-poker-game/static/css/main.812a1d76.chunk.css",
+    "main.js": "/planning-poker-game/static/js/main.e0778485.chunk.js",
+    "main.js.map": "/planning-poker-game/static/js/main.e0778485.chunk.js.map",
+    "runtime-main.js": "/planning-poker-game/static/js/runtime-main.710428e6.js",
+    "runtime-main.js.map": "/planning-poker-game/static/js/runtime-main.710428e6.js.map",
+    "static/css/2.764ccc25.chunk.css": "/planning-poker-game/static/css/2.764ccc25.chunk.css",
+    "static/js/2.19f1de0e.chunk.js": "/planning-poker-game/static/js/2.19f1de0e.chunk.js",
+    "static/js/2.19f1de0e.chunk.js.map": "/planning-poker-game/static/js/2.19f1de0e.chunk.js.map",
+    "index.html": "/planning-poker-game/index.html",
+    "precache-manifest.9d6e9b1c59f979d3cb5a423bb2f84a64.js": "/planning-poker-game/precache-manifest.9d6e9b1c59f979d3cb5a423bb2f84a64.js",
+    "service-worker.js": "/planning-poker-game/service-worker.js",
+    "static/css/2.764ccc25.chunk.css.map": "/planning-poker-game/static/css/2.764ccc25.chunk.css.map",
+    "static/css/main.812a1d76.chunk.css.map": "/planning-poker-game/static/css/main.812a1d76.chunk.css.map",
+    "static/js/2.19f1de0e.chunk.js.LICENSE.txt": "/planning-poker-game/static/js/2.19f1de0e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.710428e6.js",
+    "static/css/2.764ccc25.chunk.css",
+    "static/js/2.19f1de0e.chunk.js",
+    "static/css/main.812a1d76.chunk.css",
+    "static/js/main.e0778485.chunk.js"
+  ]
 }
